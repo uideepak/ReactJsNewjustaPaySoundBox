@@ -1,3 +1,7 @@
+/* *{
+  overflow-x: none;
+} */
+
 .homebanner {
   background-image: url(../src/Assets/hero-banner.png);
   background-size: cover;
@@ -5,3 +9,82 @@
   background-position: center;
   padding: 150px 0px;
 }
+
+.shoping-outer {
+  position: relative;
+}
+
+.shoping-inner {
+  position: absolute;
+  left: -200px;
+  top: 0px;
+}
+
+.smallBanner {
+  background-image: url(../src/Assets/smallBanner.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 50px 0px;
+  border-radius: 10px;
+  width: 100%;
+}
+
+.aboutus {
+  background-image: url(../src/Assets/smallBanner.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 50px 0px;
+  border-radius: 10px;
+  width: 100%;
+}
+
+.product {
+  background-image: url(../src/Assets/Product.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 50px 0px;
+  border-radius: 10px;
+  width: 100%;
+}
+
+.blog {
+  background-image: url(../src/Assets/blog.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 50px 0px;
+  border-radius: 10px;
+  width: 100%;
+}
+
+
+.contact {
+  background-image: url(../src/Assets/blog.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 50px 0px;
+  border-radius: 10px;
+  width: 100%;
+}
+
+
+
+.blogs-card {
+  background-image: url(../src/Assets/blog-card.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 150px 0px;
+  border-radius: 10px;
+  width: 100%;
+}
+
+.contacts{
+  background-color:#FE865A ;
+  border-radius: 20px;
+}
+

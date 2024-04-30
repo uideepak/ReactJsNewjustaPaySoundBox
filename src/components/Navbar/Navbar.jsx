@@ -1,5 +1,6 @@
 import React from "react";
 import logo from "../../Assets/logo.png";
+import { Link } from "react-router-dom";
 
 export default function Navbar() {
   return (
@@ -26,62 +27,61 @@ export default function Navbar() {
             className="collapse navbar-collapse justify-content-end"
             id="navbarSupportedContent"
           >
-            <ul className="navbar-nav  mb-2 mb-lg-0">
-              <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="#">
-                  Home
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">
-                  About Us
-                </a>
-              </li>
-              <li className="nav-item dropdown">
-                <a
-                  className="nav-link dropdown-toggle"
-                  href="#"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  Products
-                </a>
-                <ul className="dropdown-menu">
-                  <li>
-                    <a className="dropdown-item" href="#">
-                      Technical Specification
-                    </a>
-                  </li>
-                  <li>
-                    <a className="dropdown-item" href="#">
-                      Sound box Id Card{" "}
-                    </a>
-                  </li>
-                  <li>
-                    {/* <hr className="dropdown-divider" /> */}
-                  </li>
-                  <li>
-                    <a className="dropdown-item" href="#">
-                      Table pod{" "}
-                    </a>
-                  </li>
-
-                  <li>
-                    <a className="dropdown-item" href="#">
-                      Table pod with Display{" "}
-                    </a>
-                  </li>
-                </ul>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link ">Blog</a>
-              </li>
-
-              <li className="nav-item">
-                <a className="nav-link ">Contact</a>
-              </li>
-            </ul>
+          <ul className="navbar-nav  mb-2 mb-lg-0">
+      <li className="nav-item">
+        <Link className="nav-link active" to="/">
+          Home
+        </Link>
+      </li>
+      <li className="nav-item">
+        <Link className="nav-link" to="/about">
+          About Us
+        </Link>
+      </li>
+      <li className="nav-item dropdown">
+        <a
+          className="nav-link dropdown-toggle"
+          href="#"
+          role="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          Products
+        </a>
+        <ul className="dropdown-menu">
+          <li>
+            <Link className="dropdown-item" to="/technical-specification">
+              Technical Specification
+            </Link>
+          </li>
+          <li>
+            <Link className="dropdown-item" to="/sound-box-id-card">
+              Sound box Id Card
+            </Link>
+          </li>
+          <li>
+            <Link className="dropdown-item" to="/table-pod">
+              Table pod
+            </Link>
+          </li>
+          <li>
+            <Link className="dropdown-item" to="/table-pod-with-display">
+              Table pod with Display
+            </Link>
+          </li>
+        </ul>
+      </li>
+      <li className="nav-item">
+        <Link className="nav-link" to="/blog">
+          Blog
+        </Link>
+      </li>
+      <li className="nav-item">
+        <Link className="nav-link" to="/contact">
+          Contact
+        </Link>
+      </li>
+    </ul>
             {/* <form className="d-flex" role="search">
               <input
                 className="form-control me-2"
