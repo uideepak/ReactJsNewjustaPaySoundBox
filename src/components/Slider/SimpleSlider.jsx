@@ -1,81 +1,75 @@
 import React from "react";
-import Slider from "react-slick";
-import idcard from "../../Assets/idcard.png";
-import tablepod from "../../Assets/tablepod.png";
-import { FaArrowAltCircleRight } from "react-icons/fa";
-
+import tablepod from "../../Assets/card-tablepod.png";
+import tablepodWitchDisplay from "../../Assets/sound-4.png";
+import idCard from "../../Assets/sound-2.png";
+import technicalspecification from "../../Assets/sonund-3.png";
 export default function SimpleSlider() {
-  var settings = {
-    dots: false,
-    infinite: true,
-    speed: 500,
-    autoplay: false,
-    slidesToShow: 4,
-    slidesToScroll: 1,
-    pauseOnHover: false,
-  };
   return (
-  <section className="px-5 ctm-slider py-5 my-5">
-
-
-    
-<Slider {...settings}>
-      <div>
-        <div className="card text-center" style={{ width: "238px" }}>
-          <img src={tablepod} alt="" />
-          <div className="card-body">
-            <h5 className="card-title text-center text-center">Card title</h5>
-            
-            <a href="#" className="btn btn-primary text-center text-center">
-              Go somewhere
-            </a>
+    <div className="my-3">
+      <div className="container">
+        <div className="row  ctm-slider">
+          <div className="col-md-3 mb-5">
+            <div
+              className="card  rounded-4  py-5"
+              style={{ Width: "330px", height: "350px" }}
+            >
+              <div className="d-flex justify-content-center">
+                <img src={tablepod} alt="" className="w-100" />
+              </div>
+              <div className="card-body">
+                <h5 className="card-title text-center text-center">
+                  Table Pod
+                </h5>
+              </div>
+            </div>
           </div>
-        </div>{" "}
-      </div>
-
-      <div>
-        <div className="card text-center" style={{ width: "238px" }} >
-          <img src={tablepod} alt="" />
-          <div className="card-body">
-            <h5 className="card-title text-center">Card title</h5>
-            
-            <a href="#" className="btn btn-primary text-center text-center">
-              Go somewhere
-            </a>
+          <div className="col-md-3  col-sm mb-5 ">
+            <div
+              className="card  rounded-4  py-5"
+              style={{ Width: "330px", height: "350px" }}
+            >
+              <div className="d-flex justify-content-center">
+                <img src={tablepodWitchDisplay} alt="" className="w-100" />
+              </div>
+              <div className="card-body">
+                <h5 className="card-title text-center text-center">
+                  Table Pod with Display
+                </h5>
+              </div>
+            </div>
           </div>
-        </div>{" "}
-      </div>
-
-
-
-      <div>
-        <div className="card text-center" style={{ width: "238px" }}>
-          <img src={tablepod} alt="" />
-          <div className="card-body">
-            <h5 className="card-title text-center">Card title</h5>
-           
-            <a href="#" className="btn btn-primary text-center text-center">
-              Go somewhere
-            </a>
-          </div>
-        </div>{" "}
-      </div>
-      <div>
-        <div>
-          <div className="card text-center" style={{ width: "238px" }}>
-            <img src={tablepod} alt="" />
-            <div className="card-body">
-              <h5 className="card-title text-center">Card title</h5>
-              
-              <a href="#" className="btn btn-primary text-center text-center">
-                Go somewhere
-              </a>
+          <div className="col-md-3  mb-5">
+            <div
+              className="card  rounded-4  py-5"
+              style={{ Width: "330px", height: "350px" }}
+            >
+              <div className="d-flex justify-content-center">
+                <img src={idCard} alt="" className="w-100" />
+              </div>
+              <div className="card-body">
+                <h5 className="card-title text-center text-center">
+                  Soundbox ID Card{" "}
+                </h5>
+              </div>
+            </div>
+          </div>{" "}
+          <div className="col-md-3  mb-5">
+            <div
+              className="card  rounded-4  py-5"
+              style={{ Width: "330px", height: "350px" }}
+            >
+              <div className="d-flex justify-content-center">
+                <img src={technicalspecification} alt="" className="w-100" />
+              </div>
+              <div className="card-body">
+                <h5 className="card-title text-center text-center">
+                  Table Pod With Detachable QR Plate{" "}
+                </h5>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </Slider>
-  </section>
-
+    </div>
   );
 }

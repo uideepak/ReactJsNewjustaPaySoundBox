@@ -1,104 +1,93 @@
 import React from "react";
-import { FaChargingStation } from "react-icons/fa";
+import dyanmic from "../../Assets/dynamic-and-static-QR.png"
+import longLasting from "../../Assets/long-lasting-battery.png"
+import noPayment from "../../Assets/no-payment-frouds.png"
+import portable from "../../Assets/portable-and-remote.png"
+import securityCompliance from "../../Assets/security-compliance.png"
+import volumeControl from "../../Assets/volume-control.png"
+
+import icon from "../../Assets/112.png";
 
 export default function FeatureCard() {
   return (
     <>
-      <section className="py-3">
+      <section className="py-5">
         <div className="container">
-          <div className="row">
+          <div className="row align-items-center">
             <div className="col-md-6">
-              <div className="display-2 fw-bold">
-                <p>Justapay Sound </p>
-                <p>Box Features</p>
+              <div className="fs-1 fw-bold text-center circal mb-3">
+                <p>Features of the JustaPay</p>
+                <p>
+                   <span style={{ color: "#fe865a" }}>  Soundbox</span>{" "}
+                </p>
               </div>
             </div>
-            <div className="col-md-3">
-              <div className="card p-3" >
-                <FaChargingStation
-                  size={100}
-                  className="mx-auto bg-danger rounded-circle  p-1"
-                />
+            <div className="col-md-3 ">
+              <div className="card py-3 mb-3">
+                <img src={dyanmic} alt="dyanmic" className="w-25 mx-auto " />
                 <div className="card-body">
-                  <h5 className="card-title">10 Days battery backup</h5>
+                  <h5 className="card-title">Dynamic & Static QR</h5>
                   <p className="card-text">
-                    Keeps going for 10 days without needing a recharge.
-                  </p>
+                  allowing for flexible payment methods </p>
                 </div>
               </div>
             </div>
 
             <div className="col-md-3">
-              <div className="card  p-3" >
-                <FaChargingStation
-                  size={100}
-                  className="mx-auto bg-danger rounded-circle  p-1"
-                />
+              <div className="card py-3 mb-3 ">
+                <img src={longLasting} alt="" className="w-25 mx-auto " />
                 <div className="card-body">
-                  <h5 className="card-title">10 Days battery backup</h5>
+                  <h5 className="card-title">Long-lasting battery</h5>
                   <p className="card-text">
-                    Keeps going for 10 days without needing a recharge.
+                  prevent payment frauds, ensuring secure transactions
                   </p>
                 </div>
               </div>
             </div>
 
-            <div className="row py-3">
+            <div className="row py-3   align-items-center">
               <div className="col-md-3">
-                <div className="card p-3">
-                  <FaChargingStation
-                    size={100}
-                    className="mx-auto bg-danger rounded-circle  p-1"
-                  />
+                <div className="card py-3 mb-3">
+                  <img src={noPayment} alt="" className="w-25 mx-auto " />
                   <div className="card-body">
-                    <h5 className="card-title">10 Days battery backup</h5>
+                    <h5 className="card-title"> 22Long-lasting battery</h5>
+                    <p className="card-text ">
+                    durable battery that offers extended usage time                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="col-md-3">
+                <div className="card py-3 mb-3">
+                  <img src={portable} alt="" className="w-25 mx-auto " />
+                  <div className="card-body">
+                    <h5 className="card-title">Security Compliance</h5>
                     <p className="card-text">
-                      Keeps going for 10 days without needing a recharge.
+                    safeguard user information and transactions
                     </p>
                   </div>
                 </div>
               </div>
 
               <div className="col-md-3">
-                <div className="card p-3 ">
-                  <FaChargingStation
-                    size={100}
-                    className="mx-auto bg-danger rounded-circle  p-1"
-                  />
+                <div className="card py-3 mb-3">
+                  <img src={securityCompliance} alt="" className="w-25 mx-auto " />
                   <div className="card-body">
-                    <h5 className="card-title">10 Days battery backup</h5>
+                    <h5 className="card-title">Volume Control</h5>
                     <p className="card-text">
-                      Keeps going for 10 days without needing a recharge.
+                    Provides adjustable volume settings
                     </p>
                   </div>
                 </div>
               </div>
 
               <div className="col-md-3">
-                <div className="card p-3">
-                  <FaChargingStation
-                    size={100}
-                    className="mx-auto bg-danger rounded-circle  p-1"
-                  />
+                <div className="card py-3 mb-3">
+                  <img src={volumeControl} alt="" className="w-25 mx-auto " />
                   <div className="card-body">
-                    <h5 className="card-title">10 Days battery backup</h5>
-                    <p className="card-text">
-                      Keeps going for 10 days without needing a recharge.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="col-md-3">
-                <div className="card p-3">
-                  <FaChargingStation
-                    size={100}
-                    className="mx-auto bg-danger rounded-circle  p-1"
-                  />
-                  <div className="card-body">
-                    <h5 className="card-title">10 Days battery backup</h5>
-                    <p className="card-text">
-                      Keeps going for 10 days without needing a recharge.
+                    <h5 className="card-title">Portable and Remote</h5>
+                    <p className="card-text break-word">
+                     Portable capabilities improves accessibility
                     </p>
                   </div>
                 </div>

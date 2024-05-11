@@ -35,41 +35,37 @@ export default function Footer() {
             <div className="col-md-3">
               <div>
                 <p className="fs-5 fw-bold">Available Sound Box</p>
-                <ul className="" style={{listStyle:'none'}}>
+                <ul  style={{listStyle:'none' ,padding:"0px", margin:"0px"}}>
                   <li>Food Delivery</li>
-                  <li>Food Delivery</li>
-                  <li>Food Delivery</li>
-                  <li>Food Delivery</li>
-                  <li>Food Delivery</li>
-                  <li>Food Delivery</li>
+                  <li>Furniture Store</li>
+                  <li>Coffee Shop</li>
+                  <li>Clothing Store</li>
+                  <li>eCommerce</li>
                 </ul>
               </div>
             </div>
             <div className="col-md-3">
 
             <div>
-                <p className="fs-5 fw-bold">Company </p>
-                <ul className="" style={{listStyle:'none'}}>
-                  <li>Food Delivery</li>
-                  <li>Food Delivery</li>
-                  <li>Food Delivery</li>
-                  <li>Food Delivery</li>
-                  <li>Food Delivery</li>
-                  <li>Food Delivery</li>
+                <p className="fs-5 fw-bold ">Resources
+ </p>
+                <ul  style={{listStyle:'none', padding:"0px", margin:"0px" }}>
+                 <li>About us</li>
+                 <li>Products</li>
+                 <li>Blog</li>
+                 <li>Contact</li>
                 </ul>
-              </div>
+              </div> 
             </div>
             <div className="col-md-3">
 
             <div>
-                <p className="fs-5 fw-bold">Subscribe</p> 
-                <ul className="" style={{listStyle:'none'}}>
-                  <li>Food Delivery</li>
-                  <li>Food Delivery</li>
-                  <li>Food Delivery</li>
-                  <li>Food Delivery</li>
-                  <li>Food Delivery</li>
-                  <li>Food Delivery</li>
+                <p className="fs-5 fw-bold">Usefull Link</p> 
+                <ul className="" style={{listStyle:'none', padding:"0px", margin:"0px"}}>
+                <li>Privacy Policy</li>
+                  <li>Terms of Use</li>
+                  <li>Features</li>
+                  <li>FAQ</li>
                 </ul>
               </div>
             </div>

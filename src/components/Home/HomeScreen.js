@@ -11,14 +11,12 @@ export default function HomeScreen() {
   return (
     <div>
       <HeroBanner />
-      <FeatureCard/>
-      <SoundboxDetails/>
-      <SoundboxStore/>
-      <SmallBanner/>
-       <ProductSlider/>
-        <Faq/>
-        <SmallBanner/>
-
+      <FeatureCard />
+      <SoundboxDetails />
+      <SoundboxStore />
+      <ProductSlider />
+      <Faq />
+      <SmallBanner />
     </div>
   );
 }

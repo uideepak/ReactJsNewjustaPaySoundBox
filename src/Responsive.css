@@ -1,0 +1,21 @@
+@media (min-width: 320px) and (max-width: 766px) {
+  .text-end {
+    display: none;
+  }
+
+  .ctm-shop {
+    display: none;
+  }
+  .homebanner {
+    padding: 10px 0px 30px 0px;
+  }
+  .shoping-outer {
+    display: none;
+  }
+}
+
+/* @media (min-width: 768px) and (max-width: 1235px) {
+  .homebanner {
+    padding: 10px 0px 110px 0px;
+  }
+} */
