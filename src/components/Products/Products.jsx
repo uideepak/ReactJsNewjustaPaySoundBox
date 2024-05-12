@@ -5,6 +5,8 @@ import tablepodWitchDisplay from "../../Assets/table.png"
 import tb from "../../Assets/tb.png"
 import idCard from "../../Assets/sound-2.png";
 import technicalspecification from "../../Assets/sonund-3.png"
+import circleicon from "../../Assets/circle-icon1.png"
+
 
 export default function Products() {
   return (
@@ -33,51 +35,50 @@ export default function Products() {
               </div>
             </div>
             <div className="col-md-6">
+<div className="d-flex align-items-center">
+<div><img src={circleicon} alt=""  className="w-100"/>
+</div>
+<p className="fs-1 fw-medium text-center">Table Pad</p>
+
+</div>
               <div>
-                <p className="fs-1 fw-medium text-center">Table Pad</p>
                 <p className="text-muted text-center">feature & description</p>
               </div>
             </div>
             <div className="row py-5 mx-auto">
               <div className="col-md-4 ">
                 <div className="d-flex align-items-center gap-2">
-                  <MdDoubleArrow />
-                  <div className="fs-4 fw-medium ">Memory </div>
+                  <MdDoubleArrow  size={25}  style={{ color: '#F16532' }}/>                  <div className="fs-4 fw-medium ">Memory </div>
                 </div>
                 <div className="px-4">16MB RAM. 8MB ROM (Upgradeable)</div>
                 <div></div>
 
                 <div className="d-flex  align-items-center  gap-2">
-                  <MdDoubleArrow />
-                  <div className="fs-4 fw-medium">Rechargeable Battery </div>
+                  <MdDoubleArrow  size={25}  style={{ color: '#F16532' }}/>                  <div className="fs-4 fw-medium">Rechargeable Battery </div>
                 </div>
                 <div className="px-4">2000 - 2600mAh (Optional fast charging) </div>
               </div>
               <div className="col-md-4  ">
                 <div className="d-flex align-items-center gap-2">
-                  <MdDoubleArrow />
-                  <div className="fs-4 fw-medium ">Charging Port </div>
+                  <MdDoubleArrow  size={25}  style={{ color: '#F16532' }}/>                  <div className="fs-4 fw-medium ">Charging Port </div>
                 </div>
                 <div className="px-4">1 Type C Connector</div>
                 <div></div>
 
                 <div className="d-flex  align-items-center  gap-2">
-                  <MdDoubleArrow />
-                  <div className="fs-4 fw-medium">Connectivity </div>
+                  <MdDoubleArrow  size={25}  style={{ color: '#F16532' }}/>                  <div className="fs-4 fw-medium">Connectivity </div>
                 </div>
                 <div className="px-4">4G, 2G, 4G + 2G (+ Wi-Fi for all) </div>
               </div>
               <div className="col-md-4  ">
                 <div className="d-flex align-items-center gap-2">
-                  <MdDoubleArrow />
-                  <div className="fs-4 fw-medium ">Processor </div>
+                  <MdDoubleArrow  size={25}  style={{ color: '#F16532' }}/>                  <div className="fs-4 fw-medium ">Processor </div>
                 </div>
                 <div className="px-4">32 bit ARM</div>
                 <div></div>
 
                 <div className="d-flex  align-items-center  gap-2">
-                  <MdDoubleArrow />
-                  <div className="fs-4 fw-medium">Language </div>
+                  <MdDoubleArrow  size={25}  style={{ color: '#F16532' }}/>                  <div className="fs-4 fw-medium">Language </div>
                 </div>
                 <div className="px-4">All languages are supported</div>
               </div>
@@ -91,7 +92,7 @@ export default function Products() {
         <div className="container">
           <div
             className="row align-items-center border  rounded-4 "
-            style={{ boxShadow: "rgba(149, 157, 165, 0.2) 0px 8px 24px," }}
+            style={{ boxShadow: "0px 8px 24px rgba(254, 246, 243, 0.2)" }}
           >
             <div className="col-md-6">
               <div>
@@ -109,43 +110,37 @@ export default function Products() {
             <div className="row py-5 mx-auto">
               <div className="col-md-4 ">
                 <div className="d-flex align-items-center gap-2">
-                  <MdDoubleArrow />
-                  <div className="fs-4 fw-medium ">Display </div>
+                  <MdDoubleArrow  size={25}  style={{ color: '#F16532' }}/>                  <div className="fs-4 fw-medium ">Display </div>
                 </div>
                 <div className="px-4"> 1.5 inch, 8-digit LCD display</div>
                 <div></div>
 
                 <div className="d-flex  align-items-center  gap-2">
-                  <MdDoubleArrow />
-                  <div className="fs-4 fw-medium">Memory </div>
+                  <MdDoubleArrow  size={25}  style={{ color: '#F16532' }}/>                  <div className="fs-4 fw-medium">Memory </div>
                 </div>
                 <div className="px-4">16MB RAM, 8MB ROM (Upgradeable) </div>
               </div>
               <div className="col-md-4  ">
                 <div className="d-flex align-items-center gap-2">
-                  <MdDoubleArrow />
-                  <div className="fs-4 fw-medium ">Rechargeable Battery </div>
+                  <MdDoubleArrow  size={25}  style={{ color: '#F16532' }}/>                  <div className="fs-4 fw-medium ">Rechargeable Battery </div>
                 </div>
                 <div className="px-4"> 2000 - 2600mAh (Optional fast charging)</div>
                 <div></div>
 
                 <div className="d-flex  align-items-center  gap-2">
-                  <MdDoubleArrow />
-                  <div className="fs-4 fw-medium">Charging Port </div>
+                  <MdDoubleArrow  size={25}  style={{ color: '#F16532' }}/>                  <div className="fs-4 fw-medium">Charging Port </div>
                 </div>
                 <div className="px-4">1 Type C Connector</div>
               </div>
               <div className="col-md-4  ">
                 <div className="d-flex align-items-center gap-2">
-                  <MdDoubleArrow />
-                  <div className="fs-4 fw-medium ">Connectivity </div>
+                  <MdDoubleArrow  size={25}  style={{ color: '#F16532' }}/>                  <div className="fs-4 fw-medium ">Connectivity </div>
                 </div>
                 <div className="px-4">2G </div>
                 <div></div>
 
                 <div className="d-flex  align-items-center  gap-2">
-                  <MdDoubleArrow />
-                  <div className="fs-4 fw-medium">Processor </div>
+                  <MdDoubleArrow  size={25}  style={{ color: '#F16532' }}/>                  <div className="fs-4 fw-medium">Processor </div>
                 </div>
                 <div className="px-4"> 32 bit ARM
 
@@ -179,44 +174,38 @@ export default function Products() {
             <div className="row py-5 mx-auto">
               <div className="col-md-4 ">
                 <div className="d-flex align-items-center gap-2">
-                  <MdDoubleArrow />
-                  <div className="fs-4 fw-medium ">Display </div>
+                  <MdDoubleArrow  size={25}  style={{ color: '#F16532' }}/>                  <div className="fs-4 fw-medium ">Display </div>
                 </div>
                 <div className="px-4">1.5 inch, B - digit LCD display
 </div>
                 <div></div>
 
                 <div className="d-flex  align-items-center  gap-2">
-                  <MdDoubleArrow />
-                  <div className="fs-4 fw-medium">Memory </div>
+                  <MdDoubleArrow  size={25}  style={{ color: '#F16532' }}/>                  <div className="fs-4 fw-medium">Memory </div>
                 </div>
                 <div className="px-4">16MB RAM, 8MB ROM (Upgradeable) </div>
               </div>
               <div className="col-md-4  ">
                 <div className="d-flex align-items-center gap-2">
-                  <MdDoubleArrow />
-                  <div className="fs-4 fw-medium ">Rechargeable Battery </div>
+                  <MdDoubleArrow  size={25}  style={{ color: '#F16532' }}/>                  <div className="fs-4 fw-medium ">Rechargeable Battery </div>
                 </div>
                 <div className="px-4"> 2000 - 2600mAh (Optional fast charging)</div>
                 <div></div>
 
                 <div className="d-flex  align-items-center  gap-2">
-                  <MdDoubleArrow />
-                  <div className="fs-4 fw-medium">Charging Port </div>
+                  <MdDoubleArrow  size={25}  style={{ color: '#F16532' }}/>                  <div className="fs-4 fw-medium">Charging Port </div>
                 </div>
                 <div className="px-4">1 Type C Connector</div>
               </div>
               <div className="col-md-4  ">
                 <div className="d-flex align-items-center gap-2">
-                  <MdDoubleArrow />
-                  <div className="fs-4 fw-medium ">Connectivity </div>
+                  <MdDoubleArrow  size={25}  style={{ color: '#F16532' }}/>                  <div className="fs-4 fw-medium ">Connectivity </div>
                 </div>
                 <div className="px-4">4G, 2G, 4G + 2G (+ Wi-Fi for all)</div>
                 <div></div>
 
                 <div className="d-flex  align-items-center  gap-2">
-                  <MdDoubleArrow />
-                  <div className="fs-4 fw-medium">Processor </div>
+                  <MdDoubleArrow  size={25}  style={{ color: '#F16532' }}/>                  <div className="fs-4 fw-medium">Processor </div>
                 </div>
                 <div className="px-4">32 bit ARM</div>
               </div>
@@ -250,43 +239,37 @@ export default function Products() {
             <div className="row py-5 mx-auto">
               <div className="col-md-4 ">
                 <div className="d-flex align-items-center gap-2">
-                  <MdDoubleArrow />
-                  <div className="fs-4 fw-medium ">Display </div>
+                  <MdDoubleArrow  size={25}  style={{ color: '#F16532' }}/>                  <div className="fs-4 fw-medium ">Display </div>
                 </div>
                 <div className="px-4"> 1.5 inch, 8-digit LCD display</div>
                 <div></div>
 
                 <div className="d-flex  align-items-center  gap-2">
-                  <MdDoubleArrow />
-                  <div className="fs-4 fw-medium">Memory </div>
+                  <MdDoubleArrow  size={25}  style={{ color: '#F16532' }}/>                  <div className="fs-4 fw-medium">Memory </div>
                 </div>
                 <div className="px-4">16MB RAM, 8MB ROM (Upgradeable) </div>
               </div>
               <div className="col-md-4  ">
                 <div className="d-flex align-items-center gap-2">
-                  <MdDoubleArrow />
-                  <div className="fs-4 fw-medium ">Rechargeable Battery </div>
+                  <MdDoubleArrow  size={25}  style={{ color: '#F16532' }}/>                  <div className="fs-4 fw-medium ">Rechargeable Battery </div>
                 </div>
                 <div className="px-4">2000 - 2600mAh (Optional fast charging)</div>
                 <div></div>
 
                 <div className="d-flex  align-items-center  gap-2">
-                  <MdDoubleArrow />
-                  <div className="fs-4 fw-medium">Charging Port </div>
+                  <MdDoubleArrow  size={25}  style={{ color: '#F16532' }}/>                  <div className="fs-4 fw-medium">Charging Port </div>
                 </div>
                 <div className="px-4">1 Type C Connector </div>
               </div>
               <div className="col-md-4  ">
                 <div className="d-flex align-items-center gap-2">
-                  <MdDoubleArrow />
-                  <div className="fs-4 fw-medium ">Connectivity </div>
+                  <MdDoubleArrow  size={25}  style={{ color: '#F16532' }}/>                  <div className="fs-4 fw-medium ">Connectivity </div>
                 </div>
                 <div className="px-4">4G, 2G, 4G + 2G (+ Wi-Fi for all)</div>
                 <div></div>
 
                 <div className="d-flex  align-items-center  gap-2">
-                  <MdDoubleArrow />
-                  <div className="fs-4 fw-medium">Processor </div>
+                  <MdDoubleArrow  size={25}  style={{ color: '#F16532' }}/>                  <div className="fs-4 fw-medium">Processor </div>
                 </div>
                 <div className="px-4"> 32 bit ARM </div>
               </div>

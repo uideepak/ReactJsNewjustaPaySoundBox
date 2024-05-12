@@ -128,8 +128,12 @@
   background-image: url(../src/Assets/about-bg.png);
   background-size: contain;
   background-repeat: no-repeat;
-  /* padding: 10px 0px; */
+  padding: 10px 0px;
   /* background-position: center; */
   /* padding: 20px 0px 110px 0px; */
 
 } 
+
+
+
+

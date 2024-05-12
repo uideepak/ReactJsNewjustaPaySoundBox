@@ -1,9 +1,11 @@
 import React from "react";
 import about from "../../Assets/aboutus.png";
+import arrow from "../../Assets/Arrow.png";
+
 export default function About() {
   return (
     <div>
-      <section className="">
+      <section >
         <div className="container">
           <div className="row aboutus">
             <p className="display-3 text-white fw-bold text-center">About us</p>
@@ -37,7 +39,7 @@ export default function About() {
 
               <div>
                 <p className="fs-3 fw-medium">Instant Payment Alerts</p>
-                <p className="text-muted">
+                <p className="text-muted aboutText">
                   Easily integrates with existing website infrastructure and
                   payment systems and users can select from a range of sound
                   effects to accompany different payment events such as
