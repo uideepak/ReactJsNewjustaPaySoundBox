@@ -11,11 +11,15 @@ export default function Blog() {
     <div>
       <section>
         <div className="container ">
-          <div className="row  blog">
-            <p className="display-3 text-white fw-bold text-center">Blog</p>
+          <div className="row  ">
+            <div className="col-md-12">
+              <div className="blog">
+              <p className="display-3 text-white fw-bold text-center">Blog</p>
             <p className=" text-white fw-medium text-center">
               There is now an abundance of readable dummy texts.
             </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>

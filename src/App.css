@@ -5,12 +5,23 @@
   box-sizing: border-box;
 }
 
+.ctm-text {
+  margin: 0px 43px;
+}
+
+.ctm-feature-text {
+  margin: 0px 84px;
+}
+
+.ctm-text-product {
+  margin: 0px 33px;
+}
 
 .card {
   box-shadow: #fe865a;
 }
 .ctm-bg {
-  background-color: #67d5f1;
+  background-color: #fe865a;
   padding: 70px 20px 70px 20px;
 }
 .homebanner {
@@ -48,7 +59,6 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  padding: 50px 0px;
   border-radius: 10px;
 }
 
@@ -94,8 +104,9 @@
 }
 
 .ctm-slider {
-  background-color: #fe865a;
-  padding: 100px 50px;
+  background-color: #67d5f1;
+  /* padding: 100px 50px; */
+  padding: 50px 0px;
 }
 
 .circal {
@@ -119,21 +130,40 @@
   font-size: 20px;
 }
 
-
-.hero-text{
+.hero-text {
   font-family: "Prompt", sans-serif !important;
 }
 
- .about-bg{
+.about-bg {
   background-image: url(../src/Assets/about-bg.png);
   background-size: contain;
   background-repeat: no-repeat;
   padding: 10px 0px;
   /* background-position: center; */
   /* padding: 20px 0px 110px 0px; */
+}
 
+.nav-link.active {
+  text-decoration: underline;
+  color: #fe865a !important;
+}
+
+.ctm-button {
+  background-color: #fac725 !important;
+  color: white !important;
+}
+
+.ctm-button:hover {
+  color: black !important;
+}
+
+ .offcanvas-backdrop {
+  background-color: transparent !important;
+  display: none !important;
 } 
 
 
-
-
+.offcanvas.hiding, .offcanvas.show, .offcanvas.showing {
+  visibility: visible;
+  width: 75%  !important;
+}

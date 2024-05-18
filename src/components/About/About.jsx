@@ -1,17 +1,26 @@
 import React from "react";
 import about from "../../Assets/aboutus.png";
-import arrow from "../../Assets/Arrow.png";
 
 export default function About() {
   return (
     <div>
       <section >
         <div className="container">
-          <div className="row aboutus">
-            <p className="display-3 text-white fw-bold text-center">About us</p>
+          <div className="row ">
+
+          <div className="col-md-12">
+          
+          <div className="aboutus py-5">
+          <p className="display-3 text-white fw-bold text-center">About us</p>
             <p className=" text-white fw-medium text-center">
               Join The Revolution In Digital Payments With JustaPay
             </p>
+
+          </div>
+          </div>
+
+
+            
           </div>
         </div>
       </section>

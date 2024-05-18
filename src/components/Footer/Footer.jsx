@@ -3,6 +3,7 @@ import logo from "../../Assets/logo.png";
 import { FaFacebook } from "react-icons/fa";
 import { FaInstagramSquare } from "react-icons/fa";
 import { FaSquareXTwitter } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
@@ -52,10 +53,18 @@ export default function Footer() {
                 <ul
                   style={{ listStyle: "none", padding: "0px", margin: "0px" }}
                 >
-                  <li>About us</li>
-                  <li>Products</li>
-                  <li>Blog</li>
-                  <li>Contact</li>
+                  <Link to="/about " className="nav-link ">
+                    About us
+                  </Link>
+                  <Link to="/product " className="nav-link ">
+                    Products
+                  </Link>
+                  <Link to="/blog " className="nav-link ">
+                    Blog
+                  </Link>
+                  <Link to="/contact " className="nav-link ">
+                    Contact
+                  </Link>
                 </ul>
               </div>
             </div>
@@ -66,10 +75,23 @@ export default function Footer() {
                   className=""
                   style={{ listStyle: "none", padding: "0px", margin: "0px" }}
                 >
-                  <li>Privacy Policy</li>
+                  {/* <li>Privacy Policy</li>
                   <li>Terms of Use</li>
                   <li>Features</li>
-                  <li>FAQ</li>
+                  <li>FAQ</li> */}
+
+                  <Link to="/Privacy " className="nav-link ">
+                    Privacy Policy
+                  </Link>
+                  <Link to="/terms " className="nav-link ">
+                    Terms of Use
+                  </Link>
+                  <Link to="/product " className="nav-link ">
+                    Features
+                  </Link>
+                  <Link to="/ " className="nav-link ">
+                    FAQ
+                  </Link>
                 </ul>
               </div>
             </div>

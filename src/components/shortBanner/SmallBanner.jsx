@@ -5,13 +5,17 @@ export default function SmallBanner() {
     <div>
       <section className=" mt-3">
         <div className="container">
-          <div className="row smallBanner">
-            <p className="display-3 text-white fw-bold text-center">Easy and Safe Payment Devices
-</p>
-            {/* <p className=" text-white fw-medium text-center">It's simple to use and you may begin paying in a matter of minutes suitable for every kind of payments.</p>             */}
+          <div className="row ">
+            <div className="col-md-12">
+           <div className="smallBanner">
+           <p className="fs-1 text-white fw-bold text-center">
+              Easy and Safe Payment Devices
+            </p>
+           </div>
+            </div>
           </div>
         </div>
       </section>
-    </div> 
+    </div>
   );
 }

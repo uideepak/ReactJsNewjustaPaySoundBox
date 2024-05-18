@@ -10,7 +10,6 @@ export default function HeroBanner() {
             <div className="col-md-6">
               <div className="display-1 text-white fw-bold hero-text'">
               Power of Payments with JustaPay 
-
                
                 <div className="hero-content ">
                 <p className="" style={{ color: "#F16532" }}>
