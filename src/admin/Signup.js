@@ -1,7 +1,7 @@
-import React, { useState } from "react";
 import signup from "../admin/Assets/signup.svg";
 import { SignupApi } from "../controller/masterController";
 import { useFormik } from "formik";
+import { toast } from "react-toastify";
 
 export default function Signup() {
   const formik = useFormik({
@@ -11,13 +11,16 @@ export default function Signup() {
       mobile: "",
       password: "",
     },
-    onSubmit: (values) => {
+    onSubmit: (values, { resetForm }) => {
       SignupApi(values)
         .then((data) => {
+          resetForm({});
+          toast.success(data.message);
           console.log(data);
         })
         .catch((err) => {
           console.log(err);
+          toast.error(err.response.data.message);
         });
     },
   });

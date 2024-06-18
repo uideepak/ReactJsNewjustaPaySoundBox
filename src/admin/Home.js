@@ -5,10 +5,9 @@ import { Outlet } from "react-router-dom";
 
 export default function Home() {
   return (
-
     <div>
       <div className="d-flex">
-        <div className="w-25">
+        <div className="w-25 bg-danger  ">
           <Sidebar />
         </div>
 
