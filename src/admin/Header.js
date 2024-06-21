@@ -1,11 +1,36 @@
-import React from 'react'
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import { MdLogout } from "react-icons/md";
+
+const LogOut = (navigate) => {
+  localStorage.clear();
+  navigate("/admin/login");
+};
 
 export default function Header() {
-  return (
-    
-    <div>
+  const navigate = useNavigate();
 
-        <div className='bg-danger p-5'>Header</div>
+  const userData = localStorage.getItem("User");
+  const user = JSON.parse(userData);
+
+  return (
+    <div>
+      <div className="p-3 admin_topHeader ">
+        <div
+          className="text-end mx-4 text-white "
+          style={{ cursor: "pointer" }}
+        >
+          <div className="d-flex justify-content-end gap-3 ">
+            <span>{user?.name}</span>
+            <div onClick={() => LogOut(navigate)}>
+              <MdLogout fontSize={25} />
+              <span>Logout</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* <div className="bg-danger w-25" >Logout</div> */}
     </div>
-  )
+  );
 }

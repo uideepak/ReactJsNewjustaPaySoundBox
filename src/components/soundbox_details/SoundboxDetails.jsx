@@ -1,5 +1,4 @@
 import React from "react";
-import { BiSolidRightArrow } from "react-icons/bi";
 import Affordable from "../../Assets/Icon_01.png";
 import Flexibility from "../../Assets/Icon_02.png";
 import Reliable from "../../Assets/Icon_03.png";
@@ -7,10 +6,9 @@ import EasySetup from "../../Assets/Icon_04.png";
 import { MdOutlineDoubleArrow } from "react-icons/md";
 import store from "../../Assets/store.png";
 
-
 export default function SoundboxDetails() {
   return (
-    <div >
+    <div>
       <div className="container">
         <div className="row text-center py-4">
           <p className="display-5 fw-bold">
@@ -28,10 +26,11 @@ export default function SoundboxDetails() {
             <div className="box-wrap py-5">
               <div className="box d-flex  align-items-center gap-3 ">
                 <div>
-                <MdOutlineDoubleArrow  size={25}  className="text-white" />
-
+                  <MdOutlineDoubleArrow size={25} className="text-white" />
                 </div>
-                <span className="fs-3 fw-bold text-white">JustaPay Soundbox</span>
+                <span className="fs-3 fw-bold text-white">
+                  JustaPay Soundbox
+                </span>
               </div>
               <p className=" text-white ctm-text">
                 JustaPay is a specialized payment platform designed specifically
@@ -42,10 +41,12 @@ export default function SoundboxDetails() {
 
             <div className="box-wrap py-5">
               <div className="box d-flex  align-items-center gap-3 ">
-              <div>
-              <MdOutlineDoubleArrow  size={25}  className="text-white"/>
+                <div>
+                  <MdOutlineDoubleArrow size={25} className="text-white" />
                 </div>
-                <span className="fs-3 fw-bold text-white">Business Solutions</span>
+                <span className="fs-3 fw-bold text-white">
+                  Business Solutions
+                </span>
               </div>
               <p className="ctm-text text-white ">
                 From payment processing and invoicing to payroll management and
@@ -62,7 +63,9 @@ export default function SoundboxDetails() {
                       <div className="col-md-5">
                         <img src={Affordable} alt="sfds" className="w-100" />
                       </div>
-                      <div className=" col-md-7 text-muted fw-bold">Affordable</div>
+                      <div className=" col-md-7 text-muted fw-bold">
+                        Affordable
+                      </div>
                     </div>
                   </div>
                   <div className="col-md-3">
@@ -70,7 +73,9 @@ export default function SoundboxDetails() {
                       <div className="col-md-5">
                         <img src={Flexibility} alt="sfds" className="w-100" />
                       </div>
-                      <div className=" col-md-7 text-muted fw-bold">Flexibility</div>
+                      <div className=" col-md-7 text-muted fw-bold">
+                        Flexibility
+                      </div>
                     </div>
                   </div>
 
@@ -79,7 +84,9 @@ export default function SoundboxDetails() {
                       <div className="col-md-5">
                         <img src={Reliable} alt="sfds" className="w-100" />
                       </div>
-                      <div className=" col-md-7 text-muted fw-bold">Reliable</div>
+                      <div className=" col-md-7 text-muted fw-bold">
+                        Reliable
+                      </div>
                     </div>
                   </div>
 
@@ -88,7 +95,9 @@ export default function SoundboxDetails() {
                       <div className="col-md-5">
                         <img src={EasySetup} alt="sfds" className="w-100" />
                       </div>
-                      <div className=" col-md-7 text-muted fw-bold">Easy Setup</div>
+                      <div className=" col-md-7 text-muted fw-bold">
+                        Easy Setup
+                      </div>
                     </div>
                   </div>
                 </div>

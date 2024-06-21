@@ -7,7 +7,9 @@ import {
   AllblogList,
   BlogUpdate,
   DeleteBlog,
-  ContactList
+  ContactList,
+  blog,
+  profiledata,
 } from "../config/config";
 
 import axios from "axios";
@@ -84,9 +86,40 @@ export const blogUpdates = async (body) => {
 
 export const blogDelete = async (body) => {
   try {
-    let data = await axios.delete(BASE_API_URL + DeleteBlog +`?id=${body}`);
+    let data = await axios.delete(BASE_API_URL + DeleteBlog + `?id=${body}`);
     console.log("data", data);
     return data;
+  } catch (err) {
+    throw err;
+  }
+};
+
+export const blogs = async (id) => {
+  console.log(id);
+  try {
+    let data = await axios.get(BASE_API_URL + blog, { params: { id: id } });
+    console.log("data", data);
+    return data;
+  } catch (err) {
+    throw err;
+  }
+};
+
+// export const userLogout = async () => {
+//   try {
+//     let data = await axios.delete(BASE_API_URL + logout );
+//     console.log("data", data);
+//     return data;
+//   } catch (err) {
+//     throw err;
+//   }
+// };
+
+export const userProfile = async (body) => {
+  try {
+    let userdata = await axios.get(BASE_API_URL + profiledata, body);
+    console.log("data", userdata);
+    return userdata;
   } catch (err) {
     throw err;
   }

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import login from "../admin/Assets/login.jpg";
 import { LoginApi } from "../controller/masterController";
 import { useFormik } from "formik";
@@ -6,7 +6,8 @@ import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 
 export default function Login() {
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
+  const [profiledata, setprofildata] = useState([]);
 
   const formik = useFormik({
     initialValues: {
@@ -16,12 +17,13 @@ export default function Login() {
     onSubmit: (values, { resetForm }) => {
       LoginApi(values)
         .then((data) => {
-          localStorage.setItem("Token", data.token);
+          localStorage.setItem("Token", JSON.stringify(data.token));
+          localStorage.setItem("User", JSON.stringify(data.user));
           navigate("/admin/dashboard"); // Navigate to admin dashboard
 
           resetForm({});
+          console.log(data, "&&&&&&&&&&&&");
           toast.success(data.message);
-
         })
         .catch((err) => {
           console.log(err);
@@ -29,6 +31,9 @@ export default function Login() {
         });
     },
   });
+
+
+  
 
   return (
     <div>

@@ -21,6 +21,9 @@ import AddBlog from "./admin/AddBlog";
 import AllBlog from "./admin/AllBlog";
 import AllLeads from "./admin/AllLeads";
 import EditBlog from "./admin/EditBlog";
+import CardBlog from "./components/Blog/CardBlog";
+import BlogCount from "./admin/BlogCount";
+import OpenRoute from "./admin/OpenRoute";
 
 function App() {
   const location = useLocation();
@@ -33,26 +36,75 @@ function App() {
 
       <Routes>
         {/* Non-admin routes */}
+
         <Route path="/" element={<HomeScreen />} />
         <Route path="/about" element={<About />} />
         <Route path="/product" element={<Products />} />
-        <Route path="/blog" element={<Blog />} />
+        <Route path="/blog/:blogId" element={<Blog />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/privacy" element={<PrivacyPolicy />} />
         <Route path="/terms" element={<TermsConditions />} />
+        <Route path="/blog" element={<CardBlog />} />
 
         {/* Admin routes */}
         <Route path="admin/login" element={<Login />} />
         <Route path="admin/signup" element={<Signup />} />
-        
-        <Route element={<Home />}>
-          <Route path="admin/dashboard" element={<DashBord />} />
-          <Route path="admin/addblog" element={<AddBlog />} />
-          <Route path="admin/allblog" element={<AllBlog />} />
-          <Route path="admin/allLeads" element={<AllLeads />} />
-          <Route path="admin/editblog" element={<EditBlog />} />
 
-
+        <Route
+          element={
+            <OpenRoute>
+              <Home />
+            </OpenRoute>
+          }
+        >
+          <Route
+            path="admin/dashboard"
+            element={
+              <OpenRoute>
+                <DashBord />
+              </OpenRoute>
+            }
+          />
+          <Route
+            path="admin/addblog"
+            element={
+              <OpenRoute>
+                <AddBlog />
+              </OpenRoute>
+            }
+          />
+          <Route
+            path="admin/allblog"
+            element={
+              <OpenRoute>
+                <AllBlog />
+              </OpenRoute>
+            }
+          />
+          <Route
+            path="admin/allLeads"
+            element={
+              <OpenRoute>
+                <AllLeads />
+              </OpenRoute>
+            }
+          />
+          <Route
+            path="admin/editblog"
+            element={
+              <OpenRoute>
+                <EditBlog />
+              </OpenRoute>
+            }
+          />
+          <Route
+            path="admin/blogcount"
+            element={
+              <OpenRoute>
+                <BlogCount />
+              </OpenRoute>
+            }
+          />
         </Route>
       </Routes>
 

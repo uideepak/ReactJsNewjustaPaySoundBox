@@ -2,25 +2,30 @@ import React from "react";
 import { useFormik } from "formik";
 import { toast } from "react-toastify";
 import { blogAPi } from "../controller/masterController";
-
+import { useNavigate } from "react-router-dom";
 export default function AddBlog() {
-
+  const userid = localStorage.getItem("User");
+  console.log(userid, "AAAAAAAAAAAAAAAA");
+  const navigate = useNavigate();
   const formik = useFormik({
     initialValues: {
       blog_title: "",
       blog_image: null,
       description: "",
+      // added_by_user_id:"",
     },
     onSubmit: (values, { resetForm }) => {
       const formData = new FormData();
       formData.append("blog_title", values.blog_title);
       formData.append("blog_image", values.blog_image);
       formData.append("description", values.description);
+      // formData.append("added_by_user_id", values.userid);
 
       blogAPi(formData)
         .then((data) => {
           resetForm({});
           toast.success(data?.message);
+          navigate("/admin/allblog");
           console.log(data);
         })
         .catch((err) => {

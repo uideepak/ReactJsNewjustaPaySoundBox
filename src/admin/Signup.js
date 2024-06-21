@@ -2,8 +2,9 @@ import signup from "../admin/Assets/signup.svg";
 import { SignupApi } from "../controller/masterController";
 import { useFormik } from "formik";
 import { toast } from "react-toastify";
-
+import { useNavigate } from "react-router-dom";
 export default function Signup() {
+  const navigate = useNavigate();
   const formik = useFormik({
     initialValues: {
       name: "",
@@ -16,7 +17,10 @@ export default function Signup() {
         .then((data) => {
           resetForm({});
           toast.success(data.message);
-          console.log(data);
+          {
+            navigate("/admin/login");
+          }
+          console.log(data, "kkkk");
         })
         .catch((err) => {
           console.log(err);
@@ -90,7 +94,11 @@ export default function Signup() {
                   <label htmlFor="floatingPassword">Password</label>
                 </div>
 
-                <button className="w-100 btn btn-lg btn-primary" type="submit">
+                <button
+                  className="w-100 btn btn-lg btn-primary"
+                  type="submit"
+                  // onClick={navigate("/admin/login")}
+                >
                   Sign up
                 </button>
               </form>

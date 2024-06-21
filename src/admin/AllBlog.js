@@ -1,14 +1,13 @@
 import React, { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { allblogList, blogDelete } from "../controller/masterController";
+import moment from "moment";
 
- export const basurl = process.env.REACT_APP_API_URL;
-
+const basurl = process.env.REACT_APP_API_URL;
 
 export default function AllBlog() {
   const navigate = useNavigate();
   const [blogData, setBlogData] = useState([]);
-  console.log(blogData, "SSSSSSSSSS");
 
   const getAllBlogs = async () => {
     const data = await allblogList();
@@ -18,8 +17,6 @@ export default function AllBlog() {
   useEffect(() => {
     getAllBlogs();
   }, []);
-
-  console.log(blogData, "BBBBBBBBBBBBBBB");
 
   const handleDelete = async (id) => {
     try {
@@ -32,23 +29,24 @@ export default function AllBlog() {
 
   return (
     <div>
-      <table className="text-center w-100 " border={1}>
+      <table className="text-center w-100 p-5 " border={1}>
         <tr className="border">
           <th>blog_title</th>
           <th>blog_image</th>
           <th>description</th>
           <th>Acction</th>
+          <th>Date</th>
         </tr>
-
         {blogData.map((blogData, index) => {
           const { blog_image } = blogData;
           const image = `${basurl}/${blog_image}`;
+
           console.log(image);
           return (
             <tr className="border">
               <td>{blogData?.blog_title}</td>
               <td>
-                <img src={image} alt="jhjh" className="w-25" />
+                <img src={image} alt="jhjh" style={{ width: "50px" }} />
               </td>
               <td>{blogData?.description}</td>
               <td>
@@ -74,6 +72,7 @@ export default function AllBlog() {
                   </button>
                 </div>
               </td>
+              <td>{moment(blogData?.updatedAt).format("DD-MM-YYYY")}</td>
             </tr>
           );
         })}

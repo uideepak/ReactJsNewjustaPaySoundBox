@@ -10,5 +10,7 @@ export const AllblogList = "bloglist";
 export const ContactList = "getForm";
 export const BlogUpdate = "updateBlog";
 export const DeleteBlog = "blogDelete";
+export const blog = "singleBlog"
+export const profiledata = "userprofile"
 
 

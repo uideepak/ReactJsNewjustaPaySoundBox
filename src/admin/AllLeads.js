@@ -7,7 +7,7 @@ export default function AllLeads() {
   console.log(contactData, "lll");
   const GetallContact = async () => {
     const data = await contactLeads();
-    setcontactData(data?.data.userdata)
+    setcontactData(data?.data.userdata);
     console.log(data, "llllllll");
   };
   useEffect(() => {
@@ -18,28 +18,24 @@ export default function AllLeads() {
       <h1>All contacts Leads</h1>
       <table className="text-center w-100 " border={1}>
         <tr className="w-100 border">
-          <th>first_Name</th>
-          <th>email</th>
-          <th>phone</th>
-          <th>device</th>
-          <th>message</th>
+          <th>First Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Device</th>
+          <th>Message</th>
         </tr>
 
-       {contactData.map((contactData, index) => {
-         
+        {contactData.map((contactData, index) => {
           return (
-            <tr className="border" >
+            <tr className="border">
               <td>{contactData?.first_Name}</td>
-             <td>{contactData?.email}</td>
-             <td>{contactData?.phone}</td>
-             <td>{contactData?.device}</td>
-             <td>{contactData?.message}</td>
-
-
+              <td>{contactData?.email}</td>
+              <td>{contactData?.phone}</td>
+              <td>{contactData?.device}</td>
+              <td>{contactData?.message}</td>
             </tr>
           );
         })}
-
       </table>
     </div>
   );

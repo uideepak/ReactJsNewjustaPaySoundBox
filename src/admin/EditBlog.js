@@ -2,10 +2,11 @@ import React, { useState } from "react";
 import { blogUpdates } from "../controller/masterController";
 import { useLocation } from "react-router-dom";
 import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 export default function EditBlog() {
+  const navigate = useNavigate();
   const location = useLocation();
   const singleblogData = location?.state?.blogData;
-  console.log(singleblogData, "All Blog Data");
 
   const [blogDetail, setBlogDetail] = useState({
     id: singleblogData?._id || "",
@@ -20,10 +21,16 @@ export default function EditBlog() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
+    const formData = new FormData();
+    formData.append("id", blogDetail?.id);
+    formData.append("blog_title", blogDetail?.blog_title);
+    formData.append("description", blogDetail?.description);
+    formData.append("blog_image", blogDetail?.blog_image);
     try {
-      const data = await blogUpdates(blogDetail);
+      const data = await blogUpdates(formData);
       console.log(data, "sadjaskdjask");
       toast.success(data?.data?.message);
+      navigate("/admin/allblog");
 
       setFeedbackMessage("Blog updated successfully!");
     } catch (error) {
@@ -66,15 +73,21 @@ export default function EditBlog() {
                       value={blogDetail.blog_title}
                     />
                   </div>
-                  <div className="mb-3">
-                    <label htmlFor="blogImage" className="form-label">
-                      old blog image
-                      <img
-                        src={`http://192.168.0.247:8000/${singleblogData?.blog_image}` || blogDetail?.blog_image}
-                        alt=""
-                        className="w-25"
-                      />
+                  <div className="mb-3  d-flex flex-column">
+                    <label htmlFor="blogImage" className="form-label  mt-3">
+                      Previous Blog image
                     </label>
+
+                    <div>
+                      <img
+                        src={
+                          `http://192.168.0.247:8000/${singleblogData?.blog_image}` ||
+                          blogDetail?.blog_image
+                        }
+                        alt=""
+                        className="w-25  mt-3"
+                      />
+                    </div>
                   </div>
                   <div className="mb-3">
                     <label htmlFor="blogImage" className="form-label">
@@ -88,7 +101,7 @@ export default function EditBlog() {
                       onChange={(e) =>
                         setBlogDetail({
                           ...blogDetail,
-                          blog_image: e.target.files[0],
+                          [e.target.name]: e.target.files[0],
                         })
                       }
                     />
@@ -120,7 +133,6 @@ export default function EditBlog() {
                     {isSubmitting ? "Submitting..." : "Submit"}
                   </button>
                 </form>
-                {feedbackMessage && <p className="mt-3">{feedbackMessage}</p>}
               </div>
             </div>
           </div>

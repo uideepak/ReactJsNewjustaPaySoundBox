@@ -5,6 +5,29 @@
   box-sizing: border-box;
 }
 
+th,
+td {
+  padding: 15px;
+  margin: 0px 20px;
+}
+
+.ctm_card {
+  max-height: 500px;
+  overflow: hidden;
+  min-height: 500px;
+}
+.ctm-description {
+  word-break: break-all;
+}
+
+.admin-sidebar {
+  background-color: #fe865a;
+  height: 100%;
+  padding: 0px 0px 500px 0px;
+}
+.admin_topHeader {
+  background-color: #67d5f1;
+}
 .ctm-text {
   margin: 0px 43px;
 }
@@ -157,13 +180,14 @@
   color: black !important;
 }
 
- .offcanvas-backdrop {
+.offcanvas-backdrop {
   background-color: transparent !important;
   display: none !important;
-} 
+}
 
-
-.offcanvas.hiding, .offcanvas.show, .offcanvas.showing {
+.offcanvas.hiding,
+.offcanvas.show,
+.offcanvas.showing {
   visibility: visible;
-  width: 75%  !important;
+  width: 75% !important;
 }
