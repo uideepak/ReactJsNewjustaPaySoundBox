@@ -48,7 +48,7 @@ export default function AllBlog() {
               <td>
                 <img src={image} alt="jhjh" style={{ width: "50px" }} />
               </td>
-              <td>{blogData?.description}</td>
+              <td className="text-break">{blogData?.description}</td>
               <td>
                 <div class="btn-group" role="group" aria-label="Basic example">
                   <button

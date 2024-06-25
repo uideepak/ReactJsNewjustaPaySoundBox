@@ -30,22 +30,39 @@ export default function CardBlog() {
             const image = `${basurl}/${blog_image}`;
             return (
               <div className="col-md-4">
-                <div class="card  ctm_card short">
-                  <img src={image} class="card-img-top w-100  " alt="..." />
-                  <div class="card-body">
+                <div class="card ctm_card short mb-3">
+                  <img src={image} class="card-img-top w-100" alt="..." />
+                  <div class="card-body d-flex flex-column">
                     <h5 class="card-title">{blogData?.blog_title}</h5>
-                    <p
-                      class="card-text ctm-description  text-break
-"
-                    >
+                    <p class="card-text ctm-description">
                       {blogData?.description}
                     </p>
-                    <a href={`/blog/${blogData?._id}`} class="btn btn-primary ">
-                      View More
-                    </a>
+                    <div class="mt-auto">
+                      <a
+                        href={`/blog/${blogData?._id}`}
+                        class="btn btn-primary"
+                      >
+                        View More
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>
+
+              // <div className="col-md-4">
+              //   <div class="card  ctm_card short mb-3">
+              //     <img src={image} class="card-img-top w-100  " alt="..." />
+              //     <div class="card-body">
+              //       <h5 class="card-title  ">{blogData?.blog_title}</h5>
+              //       <p class=" card-text ctm-description ">
+              //         {blogData?.description}
+              //       </p>
+              //       <a href={`/blog/${blogData?._id}`} class="btn btn-primary ">
+              //         View More
+              //       </a>
+              //     </div>
+              //   </div>
+              // </div>
             );
           })}
         </div>

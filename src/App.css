@@ -11,18 +11,47 @@ td {
   margin: 0px 20px;
 }
 
-.ctm_card {
-  max-height: 500px;
-  overflow: hidden;
-  min-height: 500px;
+.ctm_card .view-more-btn {
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
-.ctm-description {
+
+.ctm_card:hover .view-more-btn {
+  opacity: 1;
+}
+.ctm_card {
+  line-height: 1.6;
+  min-height: 450px;
+  max-height: 450px;
+}
+/* .ctm-description {
   word-break: break-all;
+  word-wrap: break-word;
+  text-overflow: ellipsis;
+} */
+
+.ctm-description {
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  word-wrap: break-word;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-body .mt-auto {
+  margin-top: auto;
 }
 
 .admin-sidebar {
   background-color: #fe865a;
-  height: 100%;
+  max-height: max-content;
   padding: 0px 0px 500px 0px;
 }
 .admin_topHeader {

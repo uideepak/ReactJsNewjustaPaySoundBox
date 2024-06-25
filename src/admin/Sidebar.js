@@ -8,9 +8,9 @@ import { MdContactPhone } from "react-icons/md";
 export default function Sidebar() {
   return (
     <div>
-      <div className="p-5  pt-3">
+      <div className="p-5  pt-3 ">
         <div className="mb-3 ">
-          <img src={logo} alt="ss" className="bg-white p-3 rounded" />
+          <img src={logo} alt="ss" className="bg-white p-3 rounded  w-100" />
         </div>
         <div className="mb-3  d-flex align-items-center">
           <MdDashboard size={30} className="text-white " />
@@ -52,7 +52,7 @@ export default function Sidebar() {
             className="text-light text-decoration-none fs-4"
           >
             {" "}
-            Leads
+            My Leads
           </Link>
         </div>
       </div>

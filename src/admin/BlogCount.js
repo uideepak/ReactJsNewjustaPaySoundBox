@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { allblogList, contactLeads } from "../controller/masterController";
+import { useNavigate } from "react-router-dom";
 
 export default function BlogCount() {
+  const navigate = useNavigate();
   const [blogData, setBlogData] = useState();
   const [contactData, setcontactData] = useState();
 
@@ -27,22 +30,26 @@ export default function BlogCount() {
       <div className="container">
         <div className="row">
           <div className="col-md-6">
-            <div className="p-5 bg-success d-flex  align-items-center gap-3  rounded-4">
-              <h1 className="text-white">Total Blog :-</h1>
-              <h2 className="text-white">
-                {blogData ? blogData?.length : "N/A"}
-              </h2>
-            </div>
+            <Link to="/admin/allblog" style={{ textDecoration: "none" }}>
+              <div className="p-5 bg-success d-flex  align-items-center gap-3  rounded-4">
+                <h1 className="text-white">Total Blog :-</h1>
+                <h2 className="text-white">
+                  {blogData ? blogData?.length : "N/A"}
+                </h2>
+              </div>
+            </Link>
           </div>
 
           <div className="col-md-6">
-            <div className="p-5 bg-warning  d-flex  align-items-center gap-3 rounded-4 ">
-              <h1 className="text-white">Total Leads :-</h1>
-              <h2 className="text-white">
-                {" "}
-                {contactData ? contactData?.length : "N/A"}
-              </h2>
-            </div>
+            <Link to="/admin/allLeads" style={{ textDecoration: "none" }}>
+              <div className="p-5 bg-warning  d-flex  align-items-center gap-3 rounded-4 ">
+                <h1 className="text-white">Total Leads :-</h1>
+                <h2 className="text-white">
+                  {" "}
+                  {contactData ? contactData?.length : "N/A"}
+                </h2>
+              </div>
+            </Link>
           </div>
         </div>
       </div>
