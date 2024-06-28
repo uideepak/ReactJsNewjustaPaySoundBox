@@ -1,18 +1,29 @@
-import React from "react";
+import React, { useState, useRef, useMemo } from "react";
+import JoditEditor from "jodit-react";
+import HTMLReactParser from "html-react-parser/lib/index";
 import { Formik } from "formik";
 import { toast } from "react-toastify";
 import { blogAPi } from "../controller/masterController";
 import { useNavigate } from "react-router-dom";
 import { AddBlogValidations } from "../components/validations/validation";
 
-export default function AddBlog() {
+export default function AddBlog({ placeholder }) {
+  const editor = useRef(null);
+  const [content, setContent] = useState(""); // State to store editor content
+  const config = useMemo(
+    () => ({
+      readonly: false,
+      placeholder: placeholder || "Start typing...",
+    }),
+    [placeholder]
+  );
   const navigate = useNavigate();
 
   const AddBlock = (values, { resetForm }) => {
     const formData = new FormData();
     formData.append("blog_title", values.blog_title);
     formData.append("blog_image", values.blog_image);
-    formData.append("description", values.description);
+    formData.append("description", content); // Add editor content to FormData
 
     blogAPi(formData)
       .then((data) => {
@@ -43,7 +54,7 @@ export default function AddBlog() {
                     initialValues={{
                       blog_title: "",
                       blog_image: null,
-                      description: "",
+                      description: "", // Initialize description field
                     }}
                     onSubmit={AddBlock}
                     validationSchema={AddBlogValidations}
@@ -102,19 +113,18 @@ export default function AddBlog() {
                           <label htmlFor="description" className="form-label">
                             Description
                           </label>
-                          <textarea
-                            className="form-control"
-                            id="description"
+                          <JoditEditor
                             name="description"
-                            rows="3"
-                            onChange={handleChange}
-                            onBlur={handleBlur}
-                            value={values.description}
+                            ref={editor}
+                            value={content} // Pass content state as value
+                            config={config}
+                            tabIndex={1}
+                            onBlur={(newContent) => {
+                              setContent(newContent); // Update content state
+                            }}
                           />
-                          {errors.description && touched.description ? (
-                            <p className="text-danger">{errors.description}</p>
-                          ) : null}
                         </div>
+                        {/* <div>{HTMLReactParser(content)}</div> */}
                         <button type="submit" className="btn btn-primary">
                           Submit
                         </button>

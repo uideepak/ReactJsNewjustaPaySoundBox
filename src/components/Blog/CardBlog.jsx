@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { allblogList } from "../../admin/../controller/masterController";
 import { useNavigate } from "react-router-dom";
 // import { toast } from "react-toastify";
+import HTMLReactParser from "html-react-parser";
 
 const basurl = process.env.REACT_APP_API_URL;
 
@@ -35,7 +36,7 @@ export default function CardBlog() {
                   <div class="card-body d-flex flex-column">
                     <h5 class="card-title">{blogData?.blog_title}</h5>
                     <p class="card-text ctm-description">
-                      {blogData?.description}
+                      {HTMLReactParser(blogData?.description)}
                     </p>
                     <div class="mt-auto">
                       <a

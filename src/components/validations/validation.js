@@ -47,5 +47,5 @@ export const ContactValidations = Yup.object().shape({
 export const AddBlogValidations = Yup.object().shape({
   blog_title: Yup.string().required(" title field is required"),
   blog_image: Yup.string().required("image field is required"),
-  description: Yup.string().required("description field is required"),
+  // description: Yup.string().required("description field is required"),
 });

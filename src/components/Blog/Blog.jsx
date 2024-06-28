@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from "react";
 // import Blogbanner from "../../Assets/blog-card.png";
 import { blogs } from "../../controller/masterController";
+import HTMLReactParser from "html-react-parser/lib/index";
+
 import { SlCalender } from "react-icons/sl";
 import { IoMdAlarm } from "react-icons/io";
 import { useParams } from "react-router-dom";
 import moment from "moment";
+import { TbFileDescription } from "react-icons/tb";
 
 export default function Blog() {
   const [blogData, setBlogData] = useState();
@@ -69,7 +72,13 @@ export default function Blog() {
                   </div>
 
                   <h5 class="card-title">{blogData?.blog_title}</h5>
-                  <p class="card-text">{blogData?.description}</p>
+                  <p
+                    class="card-text"
+                    dangerouslySetInnerHTML={{ __html: blogData?.description }}
+                  >
+                    {/* {console.log("=======================", blogData)} */}
+                    {/* {HTMLReactParser(blogData?.description)} */}
+                  </p>
                 </div>
               </div>
             </div>

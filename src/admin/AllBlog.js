@@ -1,6 +1,8 @@
-import React, { useNavigate } from "react-router-dom";
+import React from "react";
+import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { allblogList, blogDelete } from "../controller/masterController";
+import HTMLReactParser from "html-react-parser";
 import moment from "moment";
 
 const basurl = process.env.REACT_APP_API_URL;
@@ -10,10 +12,15 @@ export default function AllBlog() {
   const [blogData, setBlogData] = useState([]);
 
   const getAllBlogs = async () => {
-    const data = await allblogList();
-    setBlogData(data?.data.userBlogs);
-    console.log(data.data.userBlogs, "AAAAAAAAAAAAAA");
+    try {
+      const data = await allblogList();
+      setBlogData(data?.data?.userBlogs || []);
+      console.log(data?.data?.userBlogs, "AAAAAAAAAAAAAA");
+    } catch (error) {
+      console.error("Error fetching blogs:", error);
+    }
   };
+
   useEffect(() => {
     getAllBlogs();
   }, []);
@@ -21,61 +28,68 @@ export default function AllBlog() {
   const handleDelete = async (id) => {
     try {
       await blogDelete(id);
+      getAllBlogs();
     } catch (error) {
-      console.error("Error deleting the blog or fetching blogs:", error);
+      console.error("Error deleting the blog:", error);
     }
-    getAllBlogs();
   };
 
   return (
     <div>
-      <table className="text-center w-100 p-5 " border={1}>
-        <tr className="border">
-          <th>blog_title</th>
-          <th>blog_image</th>
-          <th>description</th>
-          <th>Acction</th>
-          <th>Date</th>
-        </tr>
-        {blogData.map((blogData, index) => {
-          const { blog_image } = blogData;
-          const image = `${basurl}/${blog_image}`;
+      <table className="text-center w-100 p-5" border={1}>
+        <thead>
+          <tr className="border">
+            <th>Blog Title</th>
+            <th>Blog Image</th>
+            <th>Description</th>
+            <th>Action</th>
+            <th>Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          {blogData.map((blog, index) => {
+            const { blog_image, blog_title, description, _id, updatedAt } =
+              blog;
+            const image = `${basurl}/${blog_image}`;
 
-          console.log(image);
-          return (
-            <tr className="border">
-              <td>{blogData?.blog_title}</td>
-              <td>
-                <img src={image} alt="jhjh" style={{ width: "50px" }} />
-              </td>
-              <td className="text-break">{blogData?.description}</td>
-              <td>
-                <div class="btn-group" role="group" aria-label="Basic example">
-                  <button
-                    onClick={() =>
-                      navigate("/admin/editblog", {
-                        state: { blogData: blogData },
-                      })
-                    }
-                    type="button"
-                    class="btn btn-primary"
+            return (
+              <tr className="border" key={_id}>
+                <td>{blog_title}</td>
+                <td>
+                  <img src={image} alt="Blog" style={{ width: "50px" }} />
+                </td>
+                <td className="text-break"> {HTMLReactParser(description)}</td>
+                <td>
+                  <div
+                    className="btn-group"
+                    role="group"
+                    aria-label="Basic example"
                   >
-                    Edit
-                  </button>
-
-                  <button
-                    type="button"
-                    class="btn btn-primary"
-                    onClick={() => handleDelete(blogData._id)}
-                  >
-                    Delete
-                  </button>
-                </div>
-              </td>
-              <td>{moment(blogData?.updatedAt).format("DD-MM-YYYY")}</td>
-            </tr>
-          );
-        })}
+                    <button
+                      onClick={() =>
+                        navigate("/admin/editblog", {
+                          state: { blogData: blog },
+                        })
+                      }
+                      type="button"
+                      className="btn btn-primary"
+                    >
+                      Edit
+                    </button>
+                    <button
+                      type="button"
+                      className="btn btn-primary"
+                      onClick={() => handleDelete(_id)}
+                    >
+                      Delete
+                    </button>
+                  </div>
+                </td>
+                <td>{moment(updatedAt).format("DD-MM-YYYY")}</td>
+              </tr>
+            );
+          })}
+        </tbody>
       </table>
     </div>
   );
