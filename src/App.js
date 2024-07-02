@@ -24,6 +24,8 @@ import EditBlog from "./admin/EditBlog";
 import CardBlog from "./components/Blog/CardBlog";
 import BlogCount from "./admin/BlogCount";
 import OpenRoute from "./admin/OpenRoute";
+import SubUserSingup from "./admin/subadmin/SubUserSingup";
+import SubUserList from "./admin/subadmin/SubUserList";
 
 function App() {
   const location = useLocation();
@@ -102,6 +104,23 @@ function App() {
             element={
               <OpenRoute>
                 <BlogCount />
+              </OpenRoute>
+            }
+          />
+          <Route
+            path="admin/subuser"
+            element={
+              <OpenRoute>
+                <SubUserSingup />
+              </OpenRoute>
+            }
+          />
+
+          <Route
+            path="admin/subUserlist"
+            element={
+              <OpenRoute>
+                <SubUserList />
               </OpenRoute>
             }
           />

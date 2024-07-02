@@ -1,15 +1,15 @@
-import signup from "../admin/Assets/signup.svg";
-import { SignupApi } from "../controller/masterController";
+import React from "react";
+import signup from "../../admin/Assets/signup.svg";
+import { Formik } from "formik";
+import { SubUserSignup } from "../../controller/masterController";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
-import { SignUpValidations } from "../components/validations/validation";
-import { Formik } from "formik";
-
-export default function Signup() {
+import { SubUserValidations } from "../../components/validations/validation";
+export default function SubUserSingup() {
   const navigate = useNavigate();
 
-  const RegisterUser = (values, { resetForm }) => {
-    SignupApi(values)
+  const SubUserCreate = (values, { resetForm }) => {
+    SubUserSignup(values)
       .then((data) => {
         resetForm({});
         toast.success(data.message);
@@ -39,12 +39,12 @@ export default function Signup() {
                 initialValues={{
                   name: "",
                   email: "",
-                  mobile: "",
+                  role: "",
+                  phone: "",
                   password: "",
-                  role: "Admin",
                 }}
-                onSubmit={RegisterUser}
-                validationSchema={SignUpValidations}
+                onSubmit={SubUserCreate}
+                validationSchema={SubUserValidations}
               >
                 {({
                   handleChange,
@@ -55,7 +55,7 @@ export default function Signup() {
                   touched,
                 }) => (
                   <form>
-                    <h1 className="h3 mb-3 fw-normal">Please sign up</h1>
+                    <h1 className="h3 mb-3 fw-normal"> Employe Signup</h1>
 
                     <div className="form-floating mb-3">
                       <input
@@ -92,20 +92,43 @@ export default function Signup() {
                       ) : null}
                       <label htmlFor="floatingInput">Email address</label>
                     </div>
+
+                    <div className="form-floating mb-3">
+                      <select
+                        class="form-select"
+                        aria-label="Default select example"
+                        name="role"
+                        value={values.role}
+                        id="role"
+                        onChange={handleChange("role")}
+                        onBlur={handleBlur("role")}
+                      >
+                        {/* <option selected>Open this select menu</option> */}
+                        <option selected className="d-none" value="Admin">
+                          Admin
+                        </option>
+                        <option value="Employee">Employee</option>
+                      </select>
+                      {errors.role && touched.role ? (
+                        <p className="text-danger">{errors.role}</p>
+                      ) : null}
+                      <label htmlFor="floatingInput">Role</label>
+                    </div>
+
                     <div className="form-floating mb-3">
                       <input
                         type="tel"
                         className="form-control"
-                        name="mobile"
+                        name="phone"
                         id="floatingInput"
                         placeholder="name@example.com"
-                        onChange={handleChange("mobile")}
-                        onBlur={handleBlur("mobile")}
-                        label="Enter Mobile"
-                        value={values.mobile}
+                        onChange={handleChange("phone")}
+                        onBlur={handleBlur("phone")}
+                        label="Enter phone"
+                        value={values.phone}
                       />
-                      {errors.mobile && touched.mobile ? (
-                        <p className="text-danger">{errors.mobile}</p>
+                      {errors.phone && touched.phone ? (
+                        <p className="text-danger">{errors.phone}</p>
                       ) : null}
                       <label htmlFor="floatingInput">Phone</label>
                     </div>

@@ -52,7 +52,7 @@ td {
 .admin-sidebar {
   background-color: #fe865a;
   max-height: max-content;
-  padding: 0px 0px 500px 0px;
+  /* padding: 0px 0px 5px 0px; */
 }
 .admin_topHeader {
   background-color: #67d5f1;

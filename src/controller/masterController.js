@@ -10,6 +10,8 @@ import {
   ContactList,
   blog,
   profiledata,
+  SubSignup,
+  SubuserList,
 } from "../config/config";
 
 import axios from "axios";
@@ -120,6 +122,26 @@ export const userProfile = async (body) => {
     let userdata = await axios.get(BASE_API_URL + profiledata, body);
     console.log("data", userdata);
     return userdata;
+  } catch (err) {
+    throw err;
+  }
+};
+
+export const SubUserSignup = async (body) => {
+  // console.log("body in the controller", body);
+  try {
+    let { data } = await axios.post(BASE_API_URL + SubSignup, body);
+    return data;
+  } catch (err) {
+    throw err;
+  }
+};
+
+export const subuserList = async (body) => {
+  try {
+    let data = await axios.get(BASE_API_URL + SubuserList);
+    console.log("data", data);
+    return data;
   } catch (err) {
     throw err;
   }

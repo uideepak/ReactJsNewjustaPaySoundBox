@@ -7,11 +7,14 @@ export default function Home() {
   return (
     <div>
       <div className="d-flex">
-        <div className=" admin-sidebar " style={{ width: "20%" }}>
+        <div
+          className=" admin-sidebar "
+          style={{ width: "20%", minHeight: "100vh" }}
+        >
           <Sidebar />
         </div>
 
-        <div style={{ width: "80%", height: "100Vh" }}>
+        <div style={{ width: "80%" }}>
           <Header />
 
           <Outlet />

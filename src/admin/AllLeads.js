@@ -15,7 +15,7 @@ export default function AllLeads() {
   }, []);
   return (
     <div>
-      <h1>All contacts Leads</h1>
+      <h2 className="text-center">All contacts Leads</h2>
       <table className="text-center w-100 " border={1}>
         <tr className="w-100 border">
           <th>First Name</th>
