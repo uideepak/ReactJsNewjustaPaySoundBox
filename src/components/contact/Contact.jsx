@@ -4,7 +4,7 @@ import { Formik } from "formik";
 import { toast } from "react-toastify";
 import { contactForm } from "../../controller/masterController";
 import { ContactValidations } from "../validations/validation";
-
+import contactimage from "../../Assets/business consulting.png";
 export default function ContactForm() {
   const ContactForms = (values, { resetForm }) => {
     contactForm(values)
@@ -40,14 +40,7 @@ export default function ContactForm() {
           <div className="row contacts align-items-center">
             <div className="col-md-5">
               <div className="text-white p-4">
-                <div className="d-flex gap-3">
-                  <SlLocationPin size={25} />
-                  <div>Address</div>
-                </div>
-                <p>
-                  D-231, Hanuman Nagar, Amrapali Marg, Vaishali Nagar, Jaipur,
-                  Rajasthan 302021
-                </p>
+                <img src={contactimage} alt="" className="w-100" />
               </div>
               {/* Repeat similar blocks as needed */}
             </div>
@@ -128,6 +121,7 @@ export default function ContactForm() {
                             onChange={handleChange("phone")}
                             onBlur={handleBlur("phone")}
                             label="Enter Mobile"
+                            maxLength={10}
                             value={values.phone}
                           />
                           {errors.phone && touched.phone ? (

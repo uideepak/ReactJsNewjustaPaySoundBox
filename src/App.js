@@ -26,11 +26,15 @@ import BlogCount from "./admin/BlogCount";
 import OpenRoute from "./admin/OpenRoute";
 import SubUserSingup from "./admin/subadmin/SubUserSingup";
 import SubUserList from "./admin/subadmin/SubUserList";
+import EditSubuUser from "./admin/subadmin/EditSubuUser";
+import UserNotValid from "./admin/subadmin/UserNotValid";
 
 function App() {
   const location = useLocation();
   const isAdminRoute = location.pathname.startsWith("/admin");
 
+  const user = localStorage.getItem("User");
+  const userdata = JSON.parse(user);
   return (
     <div className="App">
       <ToastContainer />
@@ -38,7 +42,6 @@ function App() {
 
       <Routes>
         {/* Non-admin routes */}
-
         <Route path="/" element={<HomeScreen />} />
         <Route path="/about" element={<About />} />
         <Route path="/product" element={<Products />} />
@@ -49,8 +52,8 @@ function App() {
         <Route path="/blog" element={<CardBlog />} />
 
         {/* Admin routes */}
-        <Route path="admin/login" element={<Login />} />
-        <Route path="admin/signup" element={<Signup />} />
+        <Route path="/admin/login" element={<Login />} />
+        <Route path="/admin/signup" element={<Signup />} />
 
         <Route
           element={
@@ -67,6 +70,7 @@ function App() {
               </OpenRoute>
             }
           />
+
           <Route
             path="admin/addblog"
             element={
@@ -75,6 +79,7 @@ function App() {
               </OpenRoute>
             }
           />
+
           <Route
             path="admin/allblog"
             element={
@@ -121,6 +126,15 @@ function App() {
             element={
               <OpenRoute>
                 <SubUserList />
+              </OpenRoute>
+            }
+          />
+
+          <Route
+            path="admin/editsubuser"
+            element={
+              <OpenRoute>
+                <EditSubuUser />
               </OpenRoute>
             }
           />

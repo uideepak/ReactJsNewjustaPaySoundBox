@@ -97,6 +97,7 @@ export default function Signup() {
                         type="tel"
                         className="form-control"
                         name="mobile"
+                        maxLength={10}
                         id="floatingInput"
                         placeholder="name@example.com"
                         onChange={handleChange("mobile")}

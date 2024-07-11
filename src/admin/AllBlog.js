@@ -26,6 +26,7 @@ export default function AllBlog() {
   }, []);
 
   const handleDelete = async (id) => {
+    console.log("====", id);
     try {
       await blogDelete(id);
       getAllBlogs();
@@ -48,17 +49,21 @@ export default function AllBlog() {
         </thead>
         <tbody>
           {blogData.map((blog, index) => {
-            const { blog_image, blog_title, description, _id, updatedAt } =
-              blog;
-            const image = `${basurl}/${blog_image}`;
+            console.log("blogid====>>>", blog);
+            // const { blog_image, blog_title, description, _id, updatedAt } =
+            //   blog;
+            const image = `${basurl}/${blog.blog_image}`;
 
             return (
-              <tr className="border" key={_id}>
-                <td>{blog_title}</td>
+              <tr className="border" key={index}>
+                <td>{blog.blog_title}</td>
                 <td>
                   <img src={image} alt="Blog" style={{ width: "50px" }} />
                 </td>
-                <td className="text-break"> {HTMLReactParser(description)}</td>
+                <td className="text-break">
+                  {" "}
+                  {HTMLReactParser(blog.description)}
+                </td>
                 <td>
                   <div
                     className="btn-group"
@@ -79,13 +84,13 @@ export default function AllBlog() {
                     <button
                       type="button"
                       className="btn btn-primary"
-                      onClick={() => handleDelete(_id)}
+                      onClick={() => handleDelete(blog._id)}
                     >
                       Delete
                     </button>
                   </div>
                 </td>
-                <td>{moment(updatedAt).format("DD-MM-YYYY")}</td>
+                <td>{moment(blog.updatedAt).format("DD-MM-YYYY")}</td>
               </tr>
             );
           })}

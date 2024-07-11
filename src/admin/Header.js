@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { MdLogout } from "react-icons/md";
+import { FaRegUserCircle } from "react-icons/fa";
 
 const LogOut = (navigate) => {
   localStorage.clear();
@@ -21,6 +22,8 @@ export default function Header() {
           style={{ cursor: "pointer" }}
         >
           <div className="d-flex justify-content-end gap-3 ">
+            <FaRegUserCircle fontSize={25} />
+
             <span>{user?.name}</span>
             <div onClick={() => LogOut(navigate)}>
               <MdLogout fontSize={25} />

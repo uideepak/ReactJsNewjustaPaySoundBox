@@ -12,6 +12,8 @@ import {
   profiledata,
   SubSignup,
   SubuserList,
+  SubuserDelete,
+  userEdit,
 } from "../config/config";
 
 import axios from "axios";
@@ -140,6 +142,26 @@ export const SubUserSignup = async (body) => {
 export const subuserList = async (body) => {
   try {
     let data = await axios.get(BASE_API_URL + SubuserList);
+    console.log("data", data);
+    return data;
+  } catch (err) {
+    throw err;
+  }
+};
+
+export const SubUserDel = async (body) => {
+  try {
+    let data = await axios.delete(BASE_API_URL + SubuserDelete + `?id=${body}`);
+    console.log("data", data);
+    return data;
+  } catch (err) {
+    throw err;
+  }
+};
+
+export const empUpdate = async (body) => {
+  try {
+    let data = await axios.put(BASE_API_URL + userEdit, body);
     console.log("data", data);
     return data;
   } catch (err) {

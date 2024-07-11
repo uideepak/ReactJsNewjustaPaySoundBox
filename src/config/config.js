@@ -14,3 +14,5 @@ export const blog = "singleBlog";
 export const profiledata = "userprofile";
 export const SubSignup = "subuser";
 export const SubuserList = "subuserlist";
+export const SubuserDelete = "subUserDelete";
+export const userEdit = "empupdate";

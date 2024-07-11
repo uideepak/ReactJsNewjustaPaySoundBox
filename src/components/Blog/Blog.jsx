@@ -67,7 +67,9 @@ export default function Blog() {
                       <span>
                         <IoMdAlarm size={20} />
                       </span>
-                      <span>{moment().format("LT")}</span>
+                      <span>
+                        {moment(blogData?.updatedAt).format("h:mm:ss a")}
+                      </span>
                     </div>
                   </div>
 

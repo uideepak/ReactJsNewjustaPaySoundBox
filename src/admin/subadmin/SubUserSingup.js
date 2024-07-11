@@ -1,5 +1,5 @@
 import React from "react";
-import signup from "../../admin/Assets/signup.svg";
+// import signup from "../../admin/Assets/signup.svg";
 import { Formik } from "formik";
 import { SubUserSignup } from "../../controller/masterController";
 import { toast } from "react-toastify";
@@ -14,7 +14,7 @@ export default function SubUserSingup() {
         resetForm({});
         toast.success(data.message);
         {
-          navigate("/admin/login");
+          navigate("/admin/subUserlist");
         }
         console.log(data, "kkkk");
       })
@@ -28,13 +28,13 @@ export default function SubUserSingup() {
     <div>
       <div className="container">
         <div className="row align-items-center">
-          <div className="col-md-6">
+          {/* <div className="col-md-6">
             <div>
               <img src={signup} alt="skajdkjlk" className="w-100" />
             </div>
-          </div>
-          <div className="col-md-6">
-            <main className="form-signin w-75 m-auto">
+          </div> */}
+          <div className="col-md-12">
+            <main className="form-signin w-75 m-auto py-3">
               <Formik
                 initialValues={{
                   name: "",
@@ -125,6 +125,7 @@ export default function SubUserSingup() {
                         onChange={handleChange("phone")}
                         onBlur={handleBlur("phone")}
                         label="Enter phone"
+                        maxLength={10}
                         value={values.phone}
                       />
                       {errors.phone && touched.phone ? (
