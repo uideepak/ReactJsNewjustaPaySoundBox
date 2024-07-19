@@ -45,7 +45,7 @@ export default function AddBlog({ placeholder }) {
           <div className="row">
             <div className="col-md-12">
               <div className="bg-white m-3 p-4 rounded">
-                <p className="fs-1 fw-bold">Add Blog</p>
+                <p className="fs-3 fw-bold">Add Blog</p>
                 <p className="text-muted">
                   Fill out the form to add a new blog post.
                 </p>

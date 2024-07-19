@@ -220,3 +220,10 @@ td {
   visibility: visible;
   width: 75% !important;
 }
+
+.password-icon {
+  position: absolute;
+  top: 15px;
+  right: 10px;
+  cursor: pointer;
+}

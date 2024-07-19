@@ -17,22 +17,22 @@ export default function Sidebar() {
           <img src={logo} alt="ss" className="bg-white p-3 rounded  w-100" />
         </div>
         <div className="mb-3  d-flex align-items-center">
-          <MdDashboard size={30} className="text-white " />
+          <MdDashboard size={20} className="text-white " />
 
           <Link
             to="/admin/dashboard "
-            className="text-light text-decoration-none fs-4"
+            className="text-light text-decoration-none fs-5"
           >
             Dashboard
           </Link>
         </div>
         {user?.role === "Admin" && (
           <div className="mb-3">
-            <MdAddToPhotos size={30} className="text-white " />
+            <MdAddToPhotos size={20} className="text-white " />
 
             <Link
               to="/admin/addblog"
-              className="text-light text-decoration-none fs-4"
+              className="text-light text-decoration-none fs-5"
             >
               {" "}
               Add Blog
@@ -41,24 +41,23 @@ export default function Sidebar() {
         )}
         {user?.role && user?.role === "Admin" && (
           <div className="mb-3">
-            <AiFillAppstore size={30} className="text-white " />
-
+            <AiFillAppstore size={20} className="text-white " />
             <Link
               to="/admin/allblog"
-              className="text-light text-decoration-none fs-4"
+              className="text-light text-decoration-none fs-5"
             >
               {" "}
-              My Blog
+              <span> My Blog</span>
             </Link>
           </div>
         )}
 
         <div className="mb-3">
-          <MdContactPhone size={30} className="text-white" />
+          <MdContactPhone size={20} className="text-white" />
 
           <Link
             to="/admin/allLeads"
-            className="text-light text-decoration-none fs-4"
+            className="text-light text-decoration-none fs-5"
           >
             {" "}
             My Leads
@@ -67,11 +66,11 @@ export default function Sidebar() {
 
         {user?.role && user?.role === "Admin" && (
           <div className="mb-3">
-            <FaUser size={30} className="text-white" />
+            <FaUser size={20} className="text-white" />
 
             <Link
               to="admin/subUserlist"
-              className="text-light text-decoration-none fs-4"
+              className="text-light text-decoration-none fs-5"
             >
               User
             </Link>

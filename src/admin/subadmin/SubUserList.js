@@ -1,10 +1,9 @@
 import React, { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { TiUserAdd } from "react-icons/ti";
-
 import { useNavigate } from "react-router-dom";
-
 import { subuserList, SubUserDel } from "../../controller/masterController";
+
 export default function SubUserList() {
   const navigate = useNavigate();
 
@@ -37,7 +36,7 @@ export default function SubUserList() {
     <div>
       <div className="d-flex justify-content-between align-items-center m-3">
         <div className="text-end">
-          <h4 className=" m-2   ">Sub User List</h4>
+          <h4 className=" m-2 ">Sub User List</h4>
         </div>
 
         <Link to="/admin/subuser">
@@ -81,13 +80,13 @@ export default function SubUserList() {
                           });
                         }}
                         type="button"
-                        className="btn btn-primary "
+                        className="btn btn-success "
                       >
                         Edit
                       </button>
                       <button
                         type="button"
-                        className="btn btn-primary"
+                        className="btn btn-danger"
                         onClick={() => handleDelete(subuser._id)}
                       >
                         Delete

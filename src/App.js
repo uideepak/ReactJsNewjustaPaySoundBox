@@ -11,35 +11,21 @@ import Blog from "./components/Blog/Blog";
 import Contact from "./components/contact/Contact";
 import PrivacyPolicy from "./components/Privacy Policy/PrivacyPolicy";
 import TermsConditions from "./components/Terms/TermsConditions";
-import Login from "./admin/Login";
-import Signup from "./admin/Signup";
-import DashBord from "./admin/DashBord";
-import Home from "./admin/Home";
+import CardBlog from "./components/Blog/CardBlog";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import AddBlog from "./admin/AddBlog";
-import AllBlog from "./admin/AllBlog";
-import AllLeads from "./admin/AllLeads";
-import EditBlog from "./admin/EditBlog";
-import CardBlog from "./components/Blog/CardBlog";
-import BlogCount from "./admin/BlogCount";
-import OpenRoute from "./admin/OpenRoute";
-import SubUserSingup from "./admin/subadmin/SubUserSingup";
-import SubUserList from "./admin/subadmin/SubUserList";
-import EditSubuUser from "./admin/subadmin/EditSubuUser";
-import UserNotValid from "./admin/subadmin/UserNotValid";
+import AdminRoute from "./components/Admin Routing/AdminRoute";
 
 function App() {
   const location = useLocation();
   const isAdminRoute = location.pathname.startsWith("/admin");
-
   const user = localStorage.getItem("User");
   const userdata = JSON.parse(user);
+  console.log(userdata, "FDFDF");
   return (
     <div className="App">
       <ToastContainer />
       {!isAdminRoute && <Navbar />}
-
       <Routes>
         {/* Non-admin routes */}
         <Route path="/" element={<HomeScreen />} />
@@ -50,97 +36,8 @@ function App() {
         <Route path="/privacy" element={<PrivacyPolicy />} />
         <Route path="/terms" element={<TermsConditions />} />
         <Route path="/blog" element={<CardBlog />} />
-
-        {/* Admin routes */}
-        <Route path="/admin/login" element={<Login />} />
-        <Route path="/admin/signup" element={<Signup />} />
-
-        <Route
-          element={
-            <OpenRoute>
-              <Home />
-            </OpenRoute>
-          }
-        >
-          <Route
-            path="admin/dashboard"
-            element={
-              <OpenRoute>
-                <DashBord />
-              </OpenRoute>
-            }
-          />
-
-          <Route
-            path="admin/addblog"
-            element={
-              <OpenRoute>
-                <AddBlog />
-              </OpenRoute>
-            }
-          />
-
-          <Route
-            path="admin/allblog"
-            element={
-              <OpenRoute>
-                <AllBlog />
-              </OpenRoute>
-            }
-          />
-          <Route
-            path="admin/allLeads"
-            element={
-              <OpenRoute>
-                <AllLeads />
-              </OpenRoute>
-            }
-          />
-          <Route
-            path="admin/editblog"
-            element={
-              <OpenRoute>
-                <EditBlog />
-              </OpenRoute>
-            }
-          />
-          <Route
-            path="admin/blogcount"
-            element={
-              <OpenRoute>
-                <BlogCount />
-              </OpenRoute>
-            }
-          />
-          <Route
-            path="admin/subuser"
-            element={
-              <OpenRoute>
-                <SubUserSingup />
-              </OpenRoute>
-            }
-          />
-
-          <Route
-            path="admin/subUserlist"
-            element={
-              <OpenRoute>
-                <SubUserList />
-              </OpenRoute>
-            }
-          />
-
-          <Route
-            path="admin/editsubuser"
-            element={
-              <OpenRoute>
-                <EditSubuUser />
-              </OpenRoute>
-            }
-          />
-        </Route>
       </Routes>
-
+      <AdminRoute />
       {!isAdminRoute && <Footer />}
     </div>
   );

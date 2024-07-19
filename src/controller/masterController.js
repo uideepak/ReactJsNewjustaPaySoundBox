@@ -17,7 +17,8 @@ import {
 } from "../config/config";
 
 import axios from "axios";
-
+const token = JSON.parse(localStorage.getItem("Token"));
+console.log(token);
 export const SignupApi = async (body) => {
   // console.log("body in the controller", body);
   try {
@@ -51,7 +52,11 @@ export const contactForm = async (body) => {
 export const blogAPi = async (body) => {
   console.log("body in the controller", body);
   try {
-    let { data } = await axios.post(BASE_API_URL + addBlogApi, body);
+    let { data } = await axios.post(BASE_API_URL + addBlogApi, body, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
     return data;
   } catch (err) {
     throw err;

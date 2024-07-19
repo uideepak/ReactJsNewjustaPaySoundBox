@@ -77,13 +77,13 @@ export default function AllBlog() {
                         })
                       }
                       type="button"
-                      className="btn btn-primary"
+                      className="btn btn-success"
                     >
                       Edit
                     </button>
                     <button
                       type="button"
-                      className="btn btn-primary"
+                      className="btn btn-danger"
                       onClick={() => handleDelete(blog._id)}
                     >
                       Delete

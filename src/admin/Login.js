@@ -1,14 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import login from "../admin/Assets/login.jpg";
 import { LoginApi } from "../controller/masterController";
 import { Formik } from "formik";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import { LoginValidations } from "../components/validations/validation";
+import { FaRegEyeSlash } from "react-icons/fa";
+import { FaRegEye } from "react-icons/fa";
 
 export default function Login() {
   const navigate = useNavigate();
+  const [showPassword, setShowPassword] = useState(false);
 
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
   const LoginUser = (values, { resetForm }) => {
     LoginApi(values)
       .then((data) => {
@@ -69,9 +75,10 @@ export default function Login() {
                       ) : null}
                       <label htmlFor="floatingInput">Email address</label>
                     </div>
-                    <div className="form-floating mb-3">
+
+                    <div className="form-floating mb-3  position-relative">
                       <input
-                        type="password"
+                        type={showPassword ? "text" : "password"}
                         className="form-control"
                         id="floatingPassword"
                         placeholder="Password"
@@ -81,11 +88,26 @@ export default function Login() {
                         label="Enter password"
                         value={values.password}
                       />
+
                       {errors.password && touched.password ? (
                         <p className="text-danger">{errors.password}</p>
                       ) : null}
                       <label htmlFor="floatingPassword">Password</label>
+                      <div className=" password-icon  ">
+                        {showPassword ? (
+                          <FaRegEye
+                            size={20}
+                            onClick={togglePasswordVisibility}
+                          />
+                        ) : (
+                          <FaRegEyeSlash
+                            size={20}
+                            onClick={togglePasswordVisibility}
+                          />
+                        )}
+                      </div>
                     </div>
+
                     <button
                       className="w-100 btn btn-lg btn-primary"
                       type="submit"

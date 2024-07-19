@@ -99,6 +99,7 @@ export default function EditBlog({ placeholder }) {
                         }
                         alt=""
                         className="w-25 mt-3"
+                        accept=" image/jpeg"
                       />
                     </div>
                   </div>

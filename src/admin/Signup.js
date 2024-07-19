@@ -4,10 +4,16 @@ import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import { SignUpValidations } from "../components/validations/validation";
 import { Formik } from "formik";
-
+import { FaRegEyeSlash } from "react-icons/fa";
+import { FaRegEye } from "react-icons/fa";
+import { useState } from "react";
 export default function Signup() {
   const navigate = useNavigate();
+  const [showPassword, setShowPassword] = useState(false);
 
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
   const RegisterUser = (values, { resetForm }) => {
     SignupApi(values)
       .then((data) => {
@@ -110,9 +116,9 @@ export default function Signup() {
                       ) : null}
                       <label htmlFor="floatingInput">Phone</label>
                     </div>
-                    <div className="form-floating mb-3">
+                    <div className="form-floating mb-3 position-relative">
                       <input
-                        type="password"
+                        type={showPassword ? "text" : "password"}
                         className="form-control"
                         id="floatingPassword"
                         placeholder="Password"
@@ -126,6 +132,19 @@ export default function Signup() {
                         <p className="text-danger">{errors.password}</p>
                       ) : null}
                       <label htmlFor="floatingPassword">Password</label>
+                      <div className=" password-icon  ">
+                        {showPassword ? (
+                          <FaRegEye
+                            size={20}
+                            onClick={togglePasswordVisibility}
+                          />
+                        ) : (
+                          <FaRegEyeSlash
+                            size={20}
+                            onClick={togglePasswordVisibility}
+                          />
+                        )}
+                      </div>
                     </div>
 
                     <button

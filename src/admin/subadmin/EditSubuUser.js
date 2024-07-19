@@ -5,9 +5,16 @@ import { toast } from "react-toastify";
 import { useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { SubUserEditValidations } from "../../components/validations/validation";
+import { FaRegEyeSlash } from "react-icons/fa";
+import { FaRegEye } from "react-icons/fa";
+
 export default function EditSubuUser() {
   const navigate = useNavigate();
+  const [showPassword, setShowPassword] = useState(false);
 
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
   const location = useLocation();
   const singleuserlist = location?.state?.userList;
   console.log(singleuserlist, "KKKKKKKKKKK");
@@ -111,9 +118,9 @@ export default function EditSubuUser() {
                       ) : null}
                       <label htmlFor="phone">Phone</label>
                     </div>
-                    <div className="form-floating mb-3">
+                    <div className="form-floating mb-3 position-relative">
                       <input
-                        type="password"
+                        type={showPassword ? "text" : "password"}
                         className="form-control"
                         id="password"
                         placeholder="Password"
@@ -125,6 +132,19 @@ export default function EditSubuUser() {
                         <p className="text-danger">{errors.password}</p>
                       ) : null}
                       <label htmlFor="password">Password</label>
+                      <div className=" password-icon  ">
+                        {showPassword ? (
+                          <FaRegEye
+                            size={20}
+                            onClick={togglePasswordVisibility}
+                          />
+                        ) : (
+                          <FaRegEyeSlash
+                            size={20}
+                            onClick={togglePasswordVisibility}
+                          />
+                        )}
+                      </div>
                     </div>
 
                     <button
