@@ -14,6 +14,7 @@ import {
   SubuserList,
   SubuserDelete,
   userEdit,
+  leadFilter,
 } from "../config/config";
 
 import axios from "axios";
@@ -167,6 +168,16 @@ export const SubUserDel = async (body) => {
 export const empUpdate = async (body) => {
   try {
     let data = await axios.put(BASE_API_URL + userEdit, body);
+    console.log("data", data);
+    return data;
+  } catch (err) {
+    throw err;
+  }
+};
+
+export const ContactLeadsFilter = async (params) => {
+  try {
+    let data = await axios.get(BASE_API_URL + leadFilter, { params });
     console.log("data", data);
     return data;
   } catch (err) {

@@ -89,3 +89,8 @@ export const SubUserEditValidations = Yup.object().shape({
     .required("Password field is required")
     .min(8, "minimun 8 character required"),
 });
+
+export const SarchFilter = Yup.object().shape({
+  startDate: Yup.string().required(" startDate require"),
+  endDate: Yup.string().required("endate Require"),
+});
