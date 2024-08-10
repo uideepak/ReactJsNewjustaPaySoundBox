@@ -1,5 +1,4 @@
 import React from "react";
-import { SlLocationPin } from "react-icons/sl";
 import { Formik } from "formik";
 import { toast } from "react-toastify";
 import { contactForm } from "../../controller/masterController";

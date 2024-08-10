@@ -14,6 +14,7 @@ import Login from "../../admin/Login";
 import SubUserSingup from "../../admin/subadmin/SubUserSingup";
 import SubUserList from "../../admin/subadmin/SubUserList";
 import EditSubuUser from "../../admin/subadmin/EditSubuUser";
+import ForgotPassword from "../../admin/ForgotPassword";
 export default function AdminRoute() {
   return (
     <div>
@@ -21,6 +22,7 @@ export default function AdminRoute() {
         {/* Admin routes */}
         <Route path="/admin/login" element={<Login />} />
         <Route path="/admin/signup" element={<Signup />} />
+        <Route path="/admin/forgot" element={<ForgotPassword />} />
 
         <Route
           element={
@@ -105,6 +107,15 @@ export default function AdminRoute() {
               </OpenRoute>
             }
           />
+
+          {/* <Route
+            path="admin/forgot"
+            element={
+              <OpenRoute>
+                <ForgotPassword />
+              </OpenRoute>
+            }
+          /> */}
         </Route>
       </Routes>
     </div>

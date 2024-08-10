@@ -1,4 +1,3 @@
-import { max } from "moment";
 import * as Yup from "yup";
 
 export const SignUpValidations = Yup.object().shape({
@@ -93,4 +92,10 @@ export const SubUserEditValidations = Yup.object().shape({
 export const SarchFilter = Yup.object().shape({
   startDate: Yup.string().required(" startDate require"),
   endDate: Yup.string().required("endate Require"),
+});
+
+export const forgotemail = Yup.object().shape({
+  email: Yup.string()
+    .required("Email field is required.")
+    .email("Invalid email."),
 });

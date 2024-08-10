@@ -15,11 +15,12 @@ import {
   SubuserDelete,
   userEdit,
   leadFilter,
+  forgot,
 } from "../config/config";
 
 import axios from "axios";
 const token = JSON.parse(localStorage.getItem("Token"));
-console.log(token);
+console.log(token, "tttttttttttttttttt");
 export const SignupApi = async (body) => {
   // console.log("body in the controller", body);
   try {
@@ -179,6 +180,16 @@ export const ContactLeadsFilter = async (params) => {
   try {
     let data = await axios.get(BASE_API_URL + leadFilter, { params });
     console.log("data", data);
+    return data;
+  } catch (err) {
+    throw err;
+  }
+};
+
+export const forgotEmail = async (body) => {
+  // console.log("body in the controller", body);
+  try {
+    let { data } = await axios.post(BASE_API_URL + forgot, body);
     return data;
   } catch (err) {
     throw err;

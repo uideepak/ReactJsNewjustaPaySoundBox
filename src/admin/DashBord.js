@@ -6,9 +6,11 @@ export default function DashBord() {
   const user = JSON.parse(userData);
   return (
     <div>
-      {<h3 className="text-center p-3">Welcome to {user?.name} </h3>}
+      <div>
+        {<h3 className="text-center p-3">Welcome to {user?.name} </h3>}
 
-      <BlogCount />
+        <BlogCount />
+      </div>
     </div>
   );
 }

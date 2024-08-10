@@ -1,7 +1,7 @@
 import signup from "../admin/Assets/signup.svg";
 import { SignupApi } from "../controller/masterController";
 import { toast } from "react-toastify";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { SignUpValidations } from "../components/validations/validation";
 import { Formik } from "formik";
 import { FaRegEyeSlash } from "react-icons/fa";
@@ -159,6 +159,9 @@ export default function Signup() {
                 )}
               </Formik>
             </main>
+            <p className="text-center p-3">
+              Already have an account ?<Link to="/admin/login"> Login</Link>
+            </p>
           </div>
         </div>
       </div>
