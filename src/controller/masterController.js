@@ -16,6 +16,8 @@ import {
   userEdit,
   leadFilter,
   forgot,
+  OtpVerify,
+  changepassword,
 } from "../config/config";
 
 import axios from "axios";
@@ -190,6 +192,26 @@ export const forgotEmail = async (body) => {
   // console.log("body in the controller", body);
   try {
     let { data } = await axios.post(BASE_API_URL + forgot, body);
+    return data;
+  } catch (err) {
+    throw err;
+  }
+};
+
+export const passwordVerify = async (body) => {
+  // console.log("body in the controller", body);
+  try {
+    let { data } = await axios.post(BASE_API_URL + OtpVerify, body);
+    return data;
+  } catch (err) {
+    throw err;
+  }
+};
+
+export const newpassword = async (body) => {
+  // console.log("body in the controller", body);
+  try {
+    let { data } = await axios.post(BASE_API_URL + changepassword, body);
     return data;
   } catch (err) {
     throw err;

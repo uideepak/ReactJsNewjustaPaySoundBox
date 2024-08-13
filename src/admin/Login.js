@@ -3,7 +3,7 @@ import login from "../admin/Assets/login.jpg";
 import { LoginApi } from "../controller/masterController";
 import { Formik } from "formik";
 import { toast } from "react-toastify";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { LoginValidations } from "../components/validations/validation";
 import { FaRegEyeSlash } from "react-icons/fa";
 import { FaRegEye } from "react-icons/fa";
@@ -107,7 +107,9 @@ export default function Login() {
                         )}
                       </div>
                     </div>
-
+                    <p className="text-end ">
+                      <Link to="/admin/forgot"> Forgot Password</Link>
+                    </p>
                     <button
                       className="w-100 btn btn-lg btn-primary"
                       type="submit"

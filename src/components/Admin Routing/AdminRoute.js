@@ -15,6 +15,9 @@ import SubUserSingup from "../../admin/subadmin/SubUserSingup";
 import SubUserList from "../../admin/subadmin/SubUserList";
 import EditSubuUser from "../../admin/subadmin/EditSubuUser";
 import ForgotPassword from "../../admin/ForgotPassword";
+import Verify from "../../admin/Verify";
+import PasswordUpdate from "../../admin/PasswordUpdate";
+
 export default function AdminRoute() {
   return (
     <div>
@@ -23,7 +26,9 @@ export default function AdminRoute() {
         <Route path="/admin/login" element={<Login />} />
         <Route path="/admin/signup" element={<Signup />} />
         <Route path="/admin/forgot" element={<ForgotPassword />} />
-
+        <Route path="/admin/verify" element={<Verify />} />
+        <Route path="/admin/newpassword" element={<PasswordUpdate />} />
+        Otp
         <Route
           element={
             <OpenRoute>

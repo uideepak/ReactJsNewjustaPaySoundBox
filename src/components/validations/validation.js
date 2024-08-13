@@ -99,3 +99,14 @@ export const forgotemail = Yup.object().shape({
     .required("Email field is required.")
     .email("Invalid email."),
 });
+
+export const NewPasswordValidation = Yup.object().shape({
+  password: Yup.string()
+    .required("Password field is required")
+    .min(8, "Minimum 8 characters required"),
+
+  confirmPassword: Yup.string()
+    .required("Confirm password field is required")
+    .min(8, "Minimum 8 characters required")
+    .oneOf([Yup.ref("password")], "Passwords must match"),
+});

@@ -8,21 +8,21 @@ import { forgotemail } from "../components/validations/validation";
 
 export default function ForgotPassword() {
   const navigate = useNavigate();
+
   const ForGotsEmail = (values, { resetForm }) => {
     forgotEmail(values)
       .then((data) => {
+        localStorage.setItem("email", values.email); // Set email in local storage
         resetForm({});
         toast.success(data.message);
-        {
-          navigate("/admin/login");
-        }
-        console.log(data, "kkkk");
+        navigate("/admin/verify");
       })
       .catch((err) => {
         console.log(err);
         toast.error(err.response.data.message);
       });
   };
+
   return (
     <div>
       <div className="container">
@@ -48,7 +48,7 @@ export default function ForgotPassword() {
                   errors,
                   touched,
                 }) => (
-                  <form>
+                  <form onSubmit={handleSubmit}>
                     <h1 className="h3 mb-3 fw-normal">Forgot Password</h1>
                     <div className="form-floating mb-3">
                       <input
@@ -71,7 +71,6 @@ export default function ForgotPassword() {
                     <button
                       className="w-100 btn btn-lg btn-primary"
                       type="submit"
-                      onClick={handleSubmit}
                     >
                       Continue
                     </button>
